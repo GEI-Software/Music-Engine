@@ -178,7 +178,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Zihan - zihan1048@gmail.com
+Pau - paute2001@gmail.com
+Ibrahim - popibrapro@gmail.com
+Theo - theomorenolomero@gmail.com
 
 Project Link: [https://github.com/GEI-Software/Music-Engine](https://github.com/GEI-Software/Music-Engine)
 
