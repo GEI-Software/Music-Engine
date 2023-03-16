@@ -90,7 +90,7 @@ Our project involves creating an application for Music Engine S.L, with the main
 * [![Svelte][Svelte.dev]][Svelte-url]
 * [![Laravel][Laravel.com]][Laravel-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
+* [![Python][python.org][Python-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
