@@ -90,7 +90,7 @@ Our project involves creating an application for Music Engine S.L, with the main
 * [![Svelte][Svelte.dev]][Svelte-url]
 * [![Laravel][Laravel.com]][Laravel-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![Python][python.org][python-url]
+* [![python][python.org][python-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -208,3 +208,4 @@ Project Link: [https://github.com/GEI-Software/Music-Engine](https://github.com/
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+[python-url]: https://www.pinclipart.com/picdir/middle/534-5345877_python-logo-clipart.png
