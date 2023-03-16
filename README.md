@@ -168,9 +168,9 @@ Don't forget to give the project a star! Thanks again!
 <!-- CONTACT -->
 ## Contact
 
-Zihan - zihan1048@gmail.com
+Zihan - zc3@alumnes.udl.cat
 
-Pau - paute2001@gmail.com
+Pau - pte1@alumnes.udl.cat
 
 Ibrahim - popibrapro@gmail.com
 
