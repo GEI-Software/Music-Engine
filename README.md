@@ -172,9 +172,9 @@ Zihan - zc3@alumnes.udl.cat
 
 Pau - pte1@alumnes.udl.cat
 
-Ibrahim - popibrapro@gmail.com
+Ibrahim - imb8@alumnes.udl.cat
 
-Theo - theomorenolomero@gmail.com
+Theo - tml2@alumnes.udl.cat
 
 Project Link: [https://github.com/GEI-Software/Music-Engine](https://github.com/GEI-Software/Music-Engine)
 
