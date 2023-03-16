@@ -23,7 +23,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">Music Engine</h3>
 
   <p align="center">
     Creation of a system that automatizes the renting of music studios, music materials and technical staff, and facilitates and improves the work of Music Engine S.L.
