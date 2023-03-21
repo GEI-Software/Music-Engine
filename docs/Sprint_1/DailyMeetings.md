@@ -1,21 +1,23 @@
-# Daily Meeting: 21-03-2023
+# Daily Meeting: 16-03-2023
 
 | Assistant  | Role  |  
 |---|---|
-| XXXXX  | Developer  |   
-| XXXXX |  Front-End Expert |  
-| XXXXX |  Scrum Master |  
+| Zihan, Ibra, Theo, Pau  | Developer  |   
+| Theo, Zihan |  Front-End Expert |  
+| Pau |  Scrum Master |  
+
 
 ## Problems/Difficulties
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
-| _P1_ | _Login Task_ | _Assistant1_ | _There is imposible to retrieve data from the backend_|
+| Funcionalitat del Wiki de Github | Creació de Wiki | Zihan, Theo, Ibra, Pau | Problema de que el Wiki és de pagament |
+| Característiques del Readme | Creació de l'arxiu de Readme | Theo, Pau | Problema amb els enllaços del Readme |
 
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| D | Revise backend login api service | _Assistant2_ | 10-10-2018|
+| T | Creació del model Kanban | Zihan, Theo, Ibra, Pau | 16-03-2023|
 
 T: Task
 D: Decision
@@ -23,24 +25,25 @@ I: Information
 
 
 
-# Daily Meeting: DD-MM-YYYY
+# Daily Meeting: 16-03-2023
 
 | Assistant  | Role  |  
 |---|---|
-| XXXXX  | Developer  |   
-| XXXXX |  Front-End Expert |  
-| XXXXX |  Scrum Master |  
+| Zihan, Ibra, Theo, Pau  | Developer  |   
+| Theo, Zihan |  Front-End Expert |  
+| Pau |  Scrum Master |  
+
 
 ## Problems/Difficulties
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
-| _P1_ | _Login Task_ | _Assistant1_ | _There is imposible to retrieve data from the backend_|
+| Model Kanban | Ficar l | Zihan, Theo, Ibra, Pau | Problema de que el Wiki és de pagament |
 
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| D | Revise backend login api service | _Assistant2_ | 10-10-2018|
+| T | Creació del model Kanban | Zihan, Theo, Ibra, Pau | 16-03-2023|
 
 T: Task
 D: Decision
