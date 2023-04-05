@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Studio's list - MUSIC ENGINE</title>
+</head>
+<body>
+
+<h1>Studio's list</h1>
+    <ul>
+        {% for studio in studios %}
+            <li>{{ studio.name }}</li>
+        {% endfor %}
+    </ul>
+
+</body>
+
+{% endblock %}

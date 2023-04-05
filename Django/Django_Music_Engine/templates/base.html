@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{% endblock %} - Music Engine</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="{% url 'studio_list' %}">Inicio</a></li>
+            </ul>
+         </nav>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
