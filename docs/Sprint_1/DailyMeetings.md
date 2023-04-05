@@ -1,4 +1,4 @@
-# Daily Meeting: 16-03-2023 !
+# Daily Meeting: 16-03-2023
 
 | Assistant  | Role  |  
 |---|---|
