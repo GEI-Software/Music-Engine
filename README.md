@@ -79,7 +79,17 @@ Our project involves creating an application for Music Engine S.L, with the main
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
+<!-- Comandos Git -->
+## Comando per Git
+* Create a branch (manualment desde GitHub)
+* git pull (actualitzar tot el repositori)
+* git checkout name_of_branch (canviar de rama)
+* git checkout (comprobar en quina rama estem treballant)
+* exemple: git checkout develop-branch
+* treballar en els arxius
+* git add -A
+* git commit -m "Missatge Commit"
+* git push
 
 ### Built With
 * Python
