@@ -21,7 +21,7 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', StudioListView.as_view(), name='studio_list'),
-    path('studio/<int:pk>/', studio_detail, name='studio_detail'),
+    path('studio/<str:pk>/', studio_detail, name='studio_detail'),
     path('accounts/', include('django.contrib.auth.urls')),
     re_path("^accounts/login/$", include('django.contrib.auth.urls'), name='login'),
     re_path("^accounts/logout/$", include('django.contrib.auth.urls'), name='logout'),

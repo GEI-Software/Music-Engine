@@ -10,7 +10,7 @@
 <h1>Studio's list</h1>
     <ul>
         {% for studio in studios %}
-            <li>{{ studio.name }}</li>
+            <li><a href="{% url 'studio_detail' studio.name %}">{{ studio.name }}</a></li>
         {% endfor %}
     </ul>
 
