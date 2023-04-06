@@ -16,5 +16,3 @@ class MaterialAdmin(admin.ModelAdmin):
 
 admin.site.register(MusicalStudio, StudioAdmin)
 admin.site.register(MusicalMaterial, MaterialAdmin)
-admin.site.register(ResourceManager)
-admin.site.register(Technician)

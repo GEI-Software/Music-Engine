@@ -29,16 +29,3 @@ class MusicalStudio(models.Model):
 
     def __str__(self):
         return self.name
-
-
-class ResourceManager(User):
-    username = 'Gestor de Recursos'
-    email = 'gestor@musicengine.com'
-    password = 'gestor.musicengine'
-
-
-class Technician(User):
-    SPECIALITY_COICES = (('gravar', 'GRAVAR'),
-                         ('assessorar', 'assessorar'),
-                         ('gravar i assessorar', 'GRAVAR I ASSESSORAR'))
-    speciality = models.CharField(choices=SPECIALITY_COICES, max_length=100)
