@@ -23,14 +23,6 @@ urlpatterns = [
     path('', StudioListView.as_view(), name='studio_list'),
     path('studio/<str:pk>/', studio_detail, name='studio_detail'),
     path('accounts/', include('django.contrib.auth.urls')),
-    re_path("^accounts/login/$", include('django.contrib.auth.urls'), name='login'),
-    re_path("^accounts/logout/$", include('django.contrib.auth.urls'), name='logout'),
-    re_path("^accounts/password_change/$", include('django.contrib.auth.urls'), name='password_change'),
-    re_path("^accounts/password_change/done/$", include('django.contrib.auth.urls'), name='password_change_done'),
-    re_path("^accounts/password_reset/$", include('django.contrib.auth.urls'), name='password_reset'),
-    re_path("^accounts/password_reset/done/$", include('django.contrib.auth.urls'), name='password_reset_done'),
-    re_path("^accounts/reset/(?P<uidb64>[0-9A-Za-z_\-]+)/(?P<token>[0-9A-Za-z]{1,13}-[0-9A-Zaz]{1,"
-            "20})/$", include('django.contrib.auth.urls'), name='password_reset_confirm'),
-    re_path("^accounts/reset/done/$", include('django.contrib.auth.urls'), name='password_reset_complete'),
+
 
 ]
