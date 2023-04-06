@@ -25,25 +25,10 @@ class MusicalStudio(models.Model):
     )
     type = models.CharField(choices=TYPE_CHOICES, max_length=100)
 
-    incorporated_material = models.ForeignKey(MusicalMaterial, on_delete=models.CASCADE, blank=True)
-    #incorporated_material2 = models.ForeignKey(MusicalMaterial, on_delete=models.CASCADE, blank=True)
-    #incorporated_material3 = models.ForeignKey(MusicalMaterial, on_delete=models.CASCADE, blank=True)
-    #incorporated_material4 = models.ForeignKey(MusicalMaterial, on_delete=models.CASCADE, blank=True)
-    #compatible_material = models.ForeignKey(MusicalMaterial, on_delete=models.CASCADE, blank=True)
-    #compatible_material2 = models.ForeignKey(MusicalMaterial, on_delete=models.CASCADE, blank=True)
-    #compatible_material3 = models.ForeignKey(MusicalMaterial, on_delete=models.CASCADE, blank=True)
-    #compatible_material4 = models.ForeignKey(MusicalMaterial, on_delete=models.CASCADE, blank=True)
+    incorporated_material = models.ManyToManyField(MusicalMaterial, blank=True)
 
     def __str__(self):
         return self.name
-
-    #def inc_mat(self):
-    #    return [self.incorporated_material, self.incorporated_material2,
-    #            self.incorporated_material3, self.incorporated_material4]
-
-    #def comp_mat(self):
-    #    return [self.compatible_material, self.compatible_material2,
-    #            self.compatible_material3, self.compatible_material4]
 
 
 class ResourceManager(User):
