@@ -7,8 +7,8 @@
     <body>
         <nav>
             <ul>
-                <li><a href="{% url 'studio_list' %}">Llista de sales</a></li>
                 {% if user.is_authenticated %}
+                <li><a href="{% url 'studio_list' %}">Llista de sales</a></li>
                 <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>
                 {% else %}
                 <li><a href="{% url 'login' %}">Iniciar sesión</a></li>

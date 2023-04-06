@@ -6,13 +6,16 @@
     <title>Studio's list - MUSIC ENGINE</title>
 </head>
 <body>
-
-<h1>Studio's list</h1>
-    <ul>
-        {% for studio in studios %}
-            <li><a href="{% url 'studio_detail' studio.name %}">{{ studio.name }}</a></li>
-        {% endfor %}
-    </ul>
+{% if user.is_authenticated %}
+    {% if user.username == 'gestor' %}
+        <h1>Studio's list</h1>
+            <ul>
+                {% for studio in studios %}
+                    <li><a href="{% url 'studio_detail' studio.name %}">{{ studio.name }}</a></li>
+                {% endfor %}
+            </ul>
+    {% endif %}
+{% endif %}
 
 </body>
 
