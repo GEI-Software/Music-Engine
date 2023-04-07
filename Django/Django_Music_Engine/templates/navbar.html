@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet"
+          href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <meta charset="UTF-8">
+    <title>CityMove</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300;800&family=Montserrat:ital,wght@0,300;1,400&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        .hometitle {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            font-size: 34px;
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+
+        }
+
+        li, a, button {
+            font-family: "Montserrat", sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: black;
+            text-decoration: none;
+
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px;
+        }
+
+
+        .nav_links {
+            cursor: pointer;
+        }
+
+        .nav_links {
+            list-style: none;
+        }
+
+        .nav_links li {
+            display: inline-block;
+            padding: 0 20px;
+        }
+
+        button {
+            padding: 9px 25px;
+            background-color: rgba(0, 136, 169, 1);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .container {
+            margin: 10px 0 10px 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="hometitle">
+        <a href="/home/"><h1>HOME</h1></a>
+    </div>
+    <nav>
+        <ul class="nav_links">
+            <li><a href="#">Studios</a></li>
+            <li><a href="#">Materials</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+    {% block header %}
+        {% if user.is_authenticated %}
+            <p>User: {{ user.username }} | <a href="{% url 'logout' %}?next=/create/">logout</a></p>
+        {% else %}
+            <a class="cta" href="/accounts/login/">
+                <button>Log In</button>
+            </a>
+        {% endif %}
+    {% endblock %}
+
+
+</header>
+<hr>
+
+<div class="container">
+    {% block content %}
+        {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
+

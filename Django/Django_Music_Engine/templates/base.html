@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% include 'navbar.html' %}
 <html>
     <head>
         <meta charset="UTF-8">
@@ -9,9 +9,10 @@
             <ul>
                 {% if user.is_authenticated %}
                 <li><a href="{% url 'studio_list' %}">Llista de sales</a></li>
-                <li><a href="{% url 'logout' %}">Cerrar sesión</a></li>
+                <li><a href="{% url 'material_list' %}">Llista de materials</a></li>
+                <li><a href="{% url 'logout' %}">Tancar sessió</a></li>
                 {% else %}
-                <li><a href="{% url 'login' %}">Iniciar sesión</a></li>
+                <li><a href="{% url 'login' %}">Iniciar sessió</a></li>
                 {% endif %}
             </ul>
 

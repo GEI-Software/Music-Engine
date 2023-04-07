@@ -52,7 +52,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Django_Music_Engine.urls'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/home'
 
 LOGOUT_REDIRECT_URL = '/accounts/login'
 

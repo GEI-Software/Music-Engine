@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Material's list - MUSIC ENGINE</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+    {% if user.username == 'gestor' %}
+        <h1>Material's list</h1>
+            <ul>
+                {% for material in materials %}
+                    <li><a href="{% url 'material_detail' material.name %}">{{ material.name }}</a></li>
+                {% endfor %}
+            </ul>
+    {% endif %}
+{% endif %}
+
+</body>
+
+{% endblock %}
