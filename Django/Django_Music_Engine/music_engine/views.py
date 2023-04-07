@@ -1,6 +1,10 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.shortcuts import render, get_object_or_404
+from django.urls import reverse_lazy
+
 from .models import *
-from django.views.generic import ListView
+from django.views.generic import ListView, UpdateView
 
 
 def studio_detail(request, pk):
@@ -31,3 +35,16 @@ def home(request):
 
 class HomeView:
     template_name = 'base.html'
+
+
+class CheckIsOwnerMixin(object):
+    def get_object(self, *args, **kwargs):
+        obj = super(CheckIsOwnerMixin, self).get_object(*args, **kwargs)
+        return obj
+
+
+class LoginRequiredCheckIsOwnerUpdateView(LoginRequiredMixin, CheckIsOwnerMixin, UpdateView):
+    template_name = 'studio_form.html'
+    model = MusicalStudio
+    def get_success_url(self):
+        return reverse_lazy('studio_detail', kwargs={'pk': self.object.pk})

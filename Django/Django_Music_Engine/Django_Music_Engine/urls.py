@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from music_engine.views import *
+from music_engine.forms import *
 
 urlpatterns = [
     path('', home, name='home'),
@@ -26,4 +27,8 @@ urlpatterns = [
     path('materials/', MaterialListView.as_view(), name='material_list'),
     path('material/<str:pk>/', material_detail, name='material_detail'),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('studio/<str:pk>/edit',
+         LoginRequiredCheckIsOwnerUpdateView.as_view(model=MusicalStudio, form_class=StudioForm),
+         name='studio_edit'),
+
 ]

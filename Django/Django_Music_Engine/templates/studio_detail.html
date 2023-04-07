@@ -5,5 +5,5 @@
 <p>Capacitat: {{ studio.capacity }}</p>
 <p>Tipus: {{ studio.type }}</p>
 <p>Material incorporat: {{ studio.incorporated_material }}</p>
-
+    <p>(<a class="edit-button" href="{% url 'studio_edit' studio.name %}">edit</a>)</p>
 {% endblock %}
