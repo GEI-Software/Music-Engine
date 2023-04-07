@@ -7,7 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <meta charset="UTF-8">
-    <title>CityMove</title>
+    <title>MusicEngine</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300;800&family=Montserrat:ital,wght@0,300;1,400&display=swap');
 
@@ -74,24 +74,15 @@
 <body>
 <header>
     <div class="hometitle">
-        <a href="/home/"><h1>HOME</h1></a>
+        <a href="/"><h1>MUSIC ENGINE</h1></a>
     </div>
     <nav>
         <ul class="nav_links">
-            <li><a href="#">Studios</a></li>
-            <li><a href="#">Materials</a></li>
+            <li><a href="#">Serveis</a></li>
             <li><a href="#">About</a></li>
         </ul>
     </nav>
-    {% block header %}
-        {% if user.is_authenticated %}
-            <p>User: {{ user.username }} | <a href="{% url 'logout' %}?next=/create/">logout</a></p>
-        {% else %}
-            <a class="cta" href="/accounts/login/">
-                <button>Log In</button>
-            </a>
-        {% endif %}
-    {% endblock %}
+
 
 
 </header>

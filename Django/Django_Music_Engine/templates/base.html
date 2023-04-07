@@ -12,7 +12,9 @@
                 <li><a href="{% url 'material_list' %}">Llista de materials</a></li>
                 <li><a href="{% url 'logout' %}">Tancar sessió</a></li>
                 {% else %}
-                <li><a href="{% url 'login' %}">Iniciar sessió</a></li>
+                <a class="cta" href="/accounts/login">
+                <button>Log In</button>
+                </a>
                 {% endif %}
             </ul>
 
