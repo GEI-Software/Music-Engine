@@ -47,6 +47,7 @@ class CheckIsOwnerMixin(object):
 class LoginRequiredCheckIsOwnerUpdateView(LoginRequiredMixin, CheckIsOwnerMixin, UpdateView):
     template_name = 'studio_form.html'
     model = MusicalStudio
+
     def get_success_url(self):
         return reverse_lazy('studio_detail', kwargs={'pk': self.object.pk})
 
@@ -55,3 +56,9 @@ class ReservaListView(ListView):
     model = Reserva
     template_name = 'reserva_list.html'
     context_object_name = 'reserves'
+
+
+class LlistaTecnics(ListView):
+    model = technical_personnel
+    template_name = 'detall_tecnic.html'
+    context_object_name = 'tecnic'

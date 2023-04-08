@@ -38,3 +38,12 @@ class Reserva(models.Model):
     hora_inici = models.TimeField()
     hora_fi = models.TimeField()
     reservat = models.BooleanField(default=False)
+
+
+class technical_personnel(models.Model):
+    name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    dni = models.CharField(max_length=30)
+
+    def __str__(self):
+        return f"{self.name} {self.last_name}"

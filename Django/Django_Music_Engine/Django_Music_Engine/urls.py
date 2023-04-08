@@ -31,5 +31,5 @@ urlpatterns = [
          LoginRequiredCheckIsOwnerUpdateView.as_view(model=MusicalStudio, form_class=StudioForm),
          name='studio_edit'),
     path('reserves/', ReservaListView.as_view(), name='reserva_list'),
-
+    path('llista-tecnics/', LlistaTecnics.as_view(), name='llista_tecnics')
 ]
