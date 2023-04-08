@@ -30,5 +30,6 @@ urlpatterns = [
     path('studio/<str:pk>/edit',
          LoginRequiredCheckIsOwnerUpdateView.as_view(model=MusicalStudio, form_class=StudioForm),
          name='studio_edit'),
+    path('reserves/', ReservaListView.as_view(), name='reserva_list'),
 
 ]

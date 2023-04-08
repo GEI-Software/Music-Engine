@@ -29,3 +29,12 @@ class MusicalStudio(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Reserva(models.Model):
+    usuari = models.ForeignKey(User, on_delete=models.CASCADE)
+    sala = models.ForeignKey(MusicalStudio, on_delete=models.CASCADE)
+    data = models.DateField()
+    hora_inici = models.TimeField()
+    hora_fi = models.TimeField()
+    reservat = models.BooleanField(default=False)

@@ -8,9 +8,12 @@
         <nav>
             <ul>
                 {% if user.is_authenticated %}
-                <li><a href="{% url 'studio_list' %}">Llista de sales</a></li>
-                <li><a href="{% url 'material_list' %}">Llista de materials</a></li>
-                <li><a href="{% url 'logout' %}">Tancar sessió</a></li>
+                    {% if user.username == 'gestor' %}
+                        <li><a href="{% url 'studio_list' %}">Llista de sales</a></li>
+                        <li><a href="{% url 'material_list' %}">Llista de materials</a></li>
+                        <li><a href="{% url 'reserva_list' %}">Reserves</a></li>
+                    {% endif %}
+                    <li><a href="{% url 'logout' %}">Tancar sessió</a></li>
                 {% else %}
                 <a class="cta" href="/accounts/login">
                 <button>Log In</button>

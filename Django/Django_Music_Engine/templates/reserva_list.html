@@ -1,0 +1,28 @@
+{% include 'navbar.html' %}
+
+<body>
+    <table>
+      <thead>
+        <tr>
+          <th>Usuari</th>
+          <th>Sala</th>
+          <th>Data</th>
+          <th>Hora inici</th>
+          <th>Hora fi</th>
+          <th>Reservat</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for reserva in reserves %}
+        <tr>
+          <td>{{ reserva.usuari }}</td>
+          <td>{{ reserva.sala }}</td>
+          <td>{{ reserva.data }}</td>
+          <td>{{ reserva.hora_inici }}</td>
+          <td>{{ reserva.hora_fi }}</td>
+          <td>{{ reserva.reservat }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</body>

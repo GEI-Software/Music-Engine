@@ -2,6 +2,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
+from django.utils import timezone
 
 from .models import *
 from django.views.generic import ListView, UpdateView
@@ -48,3 +49,9 @@ class LoginRequiredCheckIsOwnerUpdateView(LoginRequiredMixin, CheckIsOwnerMixin,
     model = MusicalStudio
     def get_success_url(self):
         return reverse_lazy('studio_detail', kwargs={'pk': self.object.pk})
+
+
+class ReservaListView(ListView):
+    model = Reserva
+    template_name = 'reserva_list.html'
+    context_object_name = 'reserves'
