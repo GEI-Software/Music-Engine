@@ -24,6 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('studios/', StudioListView.as_view(), name='studio_list'),
     path('studio/<str:pk>/', studio_detail, name='studio_detail'),
+    path('assignments/', AssignmentListView.as_view(), name='assignment_list'),
     path('materials/', MaterialListView.as_view(), name='material_list'),
     path('material/<str:pk>/', material_detail, name='material_detail'),
     path('accounts/', include('django.contrib.auth.urls')),
@@ -32,4 +33,5 @@ urlpatterns = [
          name='studio_edit'),
     path('reserves/', ReservaListView.as_view(), name='reserva_list'),
     path('llista-tecnics/', LlistaTecnics.as_view(), name='llista_tecnics')
+    
 ]

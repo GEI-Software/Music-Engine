@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Asignaciones</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Studio</th>
+        <th>Material</th>
+        <th>Técnico</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for assignment in assignments %}
+        <tr>
+          <td>{{ assignment.studio }}</td>
+          <td>{{ assignment.material }}</td>
+          <td>{{ assignment.technician }}</td>
+          <td>{{ assignment.date }}</td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="4">No hay asignaciones.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

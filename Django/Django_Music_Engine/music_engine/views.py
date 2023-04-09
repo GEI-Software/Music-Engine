@@ -3,7 +3,6 @@ from django.core.exceptions import PermissionDenied
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils import timezone
-
 from .models import *
 from django.views.generic import ListView, UpdateView
 
@@ -62,3 +61,9 @@ class LlistaTecnics(ListView):
     model = technical_personnel
     template_name = 'detall_tecnic.html'
     context_object_name = 'tecnic'
+
+class AssignmentListView(ListView):
+    model = Assignment
+    template_name = 'assignment_list.html'
+    context_object_name = 'assignments'
+    ordering = ['date']

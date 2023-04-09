@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+from django.views.generic import ListView
 
 class MusicalMaterial(models.Model):
     name = models.CharField(max_length=100, primary_key=True)
@@ -47,3 +47,12 @@ class technical_personnel(models.Model):
 
     def __str__(self):
         return f"{self.name} {self.last_name}"
+    
+class Assignment(models.Model):
+    studio = models.ForeignKey(MusicalStudio, on_delete=models.CASCADE)
+    material = models.ForeignKey(MusicalMaterial, on_delete=models.CASCADE)
+    technician = models.ForeignKey(technical_personnel, on_delete=models.CASCADE)
+    date = models.DateField()
+
+    def __str__(self):
+        return f"{self.studio} - {self.material} - {self.technician} - {self.date}"
