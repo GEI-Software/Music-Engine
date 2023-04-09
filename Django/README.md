@@ -11,3 +11,6 @@ pip3 freeze > requirements.txt
 ```
 
 ## Run server
+```
+python manage.py runserver
+```
