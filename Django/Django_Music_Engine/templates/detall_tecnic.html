@@ -1,8 +1,27 @@
-{% extends 'base.html' %}
+{% include 'navbar.html' %}
 
 {% block content %}
-  <h1>{{ tecnic.name }}</h1>
-  <p>Nombre: {{ tecnic.last_name }}</p>
-  <p>Apellido: {{ tecnic.apellido }}</p>
-  <p>DNI: {{ tecnic.dni }}</p>
+    <h1>Llista de personals tècnics</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>DNI</th>
+            <th>Nom</th>
+            <th>Cognom</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for tecnico in tecnic %}
+            <tr>
+                <td>{{ tecnico.dni }}</td>
+                <td>{{ tecnico.name }}</td>
+                <td>{{ tecnico.last_name }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="4">No hi ha personals tècnics.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
