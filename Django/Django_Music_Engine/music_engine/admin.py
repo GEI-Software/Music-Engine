@@ -18,7 +18,11 @@ class ReservaAdmin(admin.ModelAdmin):
     list_display = ('usuari', 'sala', 'data', 'hora_inici', 'hora_fi', 'reservat')
 
 
+class LlistatTecnics(admin.ModelAdmin):
+    list_display = ('dni', 'name', 'last_name')
+
+
 admin.site.register(MusicalStudio, StudioAdmin)
 admin.site.register(MusicalMaterial, MaterialAdmin)
 admin.site.register(Reserva, ReservaAdmin)
-
+admin.site.register(technical_personnel, LlistatTecnics)

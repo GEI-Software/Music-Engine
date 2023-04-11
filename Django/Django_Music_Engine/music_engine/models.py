@@ -41,9 +41,9 @@ class Reserva(models.Model):
 
 
 class technical_personnel(models.Model):
+    dni = models.CharField(max_length=30)
     name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    dni = models.CharField(max_length=30)
 
     def __str__(self):
         return f"{self.name} {self.last_name}"
