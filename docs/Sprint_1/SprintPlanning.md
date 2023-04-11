@@ -17,7 +17,6 @@ Considering the proposed distribution in the model Kanban, the overall activitie
 
 | Team Member  | Overall Task Desription  |  
 |---|---|
-| Pau, Ibra, Theo, Zihan | Creació de Wikis, creació del Kanban, creació del repositori de Github |   
-
-
+| Pau, Ibra, Theo, Zihan | Creació de Wikis, creació del Kanban, creació del repositori de Github |
+| Pau, Ibra, Theo, Zihan | Implementació de les user stories situades en el sprint backlog |
 
