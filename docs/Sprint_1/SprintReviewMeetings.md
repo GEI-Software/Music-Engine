@@ -27,6 +27,9 @@ describing the Scrum Master opinion about the advances.*
  <img src="images/Burnup.png" alt="BurnUp" width="80" height="80">
 </div>
 
+![alt text](https://github.com/GEI-Software/Music-Engine/blob/main/Burnup.png?raw=true)
+
+
 
 [DESCRIPTION GOES HERE]
 
