@@ -10,11 +10,10 @@
 
 | Team Member | Issue Found                                                            |  
 |-------------|------------------------------------------------------------------------|
-| Ibrahim       |-Ha agut un problema en la execució del sprint que per falta de temps no s'ha pogut implementar correctament tots el requeriments
-                | -Hem pogut extreure la majoria dels requeriments requerits per el client, però ens ha faltat millorar la llista de maetrial i afegir la funcionalitat per afegir i editar assignacions, material, personal tècnic i sales. 
-                | - El requeriment de automatització de assignacions despres d'haver fet una petició era una opció que tenia mol mes cost de l'esperat per això no s'ha implementat|   
-| XXXXX       | Description of the identified issue in the team/management/development |  
-| XXXXX       | Description of the identified issue in the team/management/development |
+| Ibrahim       | -Ha agut un problema en la execució del sprint que per falta de temps no s'ha pogut implementar correctament tots el requeriments|
+| Zihan,Theo              | -Hem pogut extreure la majoria dels requeriments requerits per el client, però ens ha faltat millorar la llista de maetrial i afegir la funcionalitat                    per afegir i editar assignacions, material, personal tècnic i sales. |
+| Pau            | - El requeriment de automatització de assignacions despres d'haver fet una petició era una opció que tenia mol mes cost de l'esperat per això no s'ha implementat|   
+
 
 ## Restrospective Actions
 
