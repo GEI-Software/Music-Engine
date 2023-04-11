@@ -22,7 +22,11 @@ paragraph describing the Scrum Master opinion about the advances.*
 *Here we need an image reflecting the advances in the Burn-up graph. Complementing the image, we need a small paragraph
 describing the Scrum Master opinion about the advances.*
 
- <img src="images/Burnup.png" alt="Logo" width="80" height="80">
+
+<div>
+ <img src="images/Burnup.png" alt="BurnUp" width="80" height="80">
+</div>
+
 
 [DESCRIPTION GOES HERE]
 
