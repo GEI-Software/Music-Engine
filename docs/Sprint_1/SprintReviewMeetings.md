@@ -14,7 +14,7 @@
 paragraph describing the Scrum Master opinion about the advances.*
 
 
-!Burn Down](https://github.com/GEI-Software/Music-Engine/blob/main/images/Burndown.png?raw=true)
+![Burn Down](https://github.com/GEI-Software/Music-Engine/blob/main/images/Burndown.png?raw=true)
 
 
 ## Burn-up (Velocity) Graph
@@ -22,7 +22,7 @@ paragraph describing the Scrum Master opinion about the advances.*
 *Here we need an image reflecting the advances in the Burn-up graph. Complementing the image, we need a small paragraph
 describing the Scrum Master opinion about the advances.*
 
-!Burn Up](https://github.com/GEI-Software/Music-Engine/blob/main/images/Burnup.png?raw=true)
+![Burn Up](https://github.com/GEI-Software/Music-Engine/blob/main/images/Burnup.png?raw=true)
 
 
 ## Client Improvements
