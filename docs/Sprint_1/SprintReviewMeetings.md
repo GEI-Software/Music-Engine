@@ -13,25 +13,17 @@
 *Here we need an image reflecting the advances in the Burn-down graph. Complementing the image, we need a small
 paragraph describing the Scrum Master opinion about the advances.*
 
-[IMAGE GOES HERE]
 
-[DESCRIPTION GOES HERE]
+!Burn Down](https://github.com/GEI-Software/Music-Engine/blob/main/images/Burndown.png?raw=true)
+
 
 ## Burn-up (Velocity) Graph
 
 *Here we need an image reflecting the advances in the Burn-up graph. Complementing the image, we need a small paragraph
 describing the Scrum Master opinion about the advances.*
 
+!Burn Up](https://github.com/GEI-Software/Music-Engine/blob/main/images/Burnup.png?raw=true)
 
-<div>
- <img src="images/Burnup.png" alt="BurnUp" width="80" height="80">
-</div>
-
-![alt text](https://github.com/GEI-Software/Music-Engine/blob/main/images/Burnup.png?raw=true)
-
-
-
-[DESCRIPTION GOES HERE]
 
 ## Client Improvements
 
