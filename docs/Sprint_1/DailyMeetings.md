@@ -38,7 +38,7 @@ I: Information
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
 | Model Kanban | Assignar costos | Zihan, Theo, Ibra, Pau | Problema de convergència en les idees entre els membres del grup |
-| Sprint planning | Realització del sprint planning | Zihan, Theo, Ibra, Pau | - |
+| Sprint planning | Realització del sprint planning | Zihan, Theo, Ibra, Pau | Elaboració document Sprint Planning |
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
@@ -202,8 +202,8 @@ I: Information
 ## Problems/Difficulties
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
-| Sprint review | Meeting per el sprint review | Zihan, Theo, Ibra, Pau | - |
-| Sprint retrospective | Meeting per el sprint retrospective | Theo, Pau | - |
+| Sprint review | Meeting per el sprint review | Zihan, Theo, Ibra, Pau | Elaboració document Sprint Review |
+| Sprint retrospective | Meeting per el sprint retrospective | Theo, Pau | Elaboració document Sprint Retrospective |
 
 
 ## Actions
