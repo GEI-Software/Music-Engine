@@ -1,4 +1,4 @@
-# Sprint Planing Title (16-03-2023)
+# Sprint 1 (16-03-2023)
 
 | Assistant  | Role  |  
 |---|---|
@@ -21,24 +21,3 @@ Considering the proposed distribution in the model Kanban, the overall activitie
 
 
 
-
-
-# Sprint Planing Title (21-03-2023)
-
-| Assistant  | Role  |  
-|---|---|
-| Zihan, Ibra, Theo, Pau  | Developer  |   
-| Theo, Zihan |  Front-End Expert |  
-| Pau |  Scrum Master |  
-
-
-## Spring Planing Overview
-
-*Here you need to include a picture of the Spring Planning in the model Kanban*
-
-
-Considering the proposed distribution in the model Kanban, the overall activities to be performed by the team are: 
-
-| Team Member  | Overall Task Desription  |  
-|---|---|
-| Pau, Ibra, Theo, Zihan | Creació del projecte en Django  |
