@@ -22,7 +22,7 @@
 | Action 1 | Al apartat de sales cal afegir la funcionalitat de afegir,borrar i editar sales  |   
 | Action 2 | Al apartat de assignacions s'afegirà la funcionalitat de afegir i editar assiganacions del personal tècnic |  
 | Action 3 | Al apartat de reserves ens te que sortir el estat de la reserva|
-| Action 4 | Al apartat de reserves ens te que sortir el estat de la reserva|
+| Action 4 | Al apartat de material s'afegira un apartat per afegir material|
 
 ## Next Sprint Team Organization
 
