@@ -1,4 +1,4 @@
-# Sprint 1 (13-04-2023)
+# Sprint 2 (13-04-2023)
 
 | Assistant  | Role  |  
 |---|---|
