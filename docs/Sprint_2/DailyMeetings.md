@@ -1,4 +1,4 @@
-# Daily Meeting: 16-03-2023
+# Daily Meeting: 13-04-2023
 
 | Assistant  | Role  |  
 |---|---|
@@ -8,16 +8,14 @@
 
 
 ## Problems/Difficulties
-| Problem  | Task  | Owner | Description |
-|---|---|---|---|
-| Funcionalitat del Wiki de Github | Creació de Wiki | Zihan, Theo, Ibra, Pau | Problema de que el Wiki és de pagament |
-| Característiques del Readme | Creació de l'arxiu de Readme | Theo, Pau | Problema amb els enllaços del Readme |
+None
 
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Creació del model Kanban | Zihan, Theo, Ibra, Pau | 16-03-2023|
+| T | Creació del model Kanban | Zihan, Theo, Ibra, Pau | 13-04-2023|
+| T | Sprint Planning | Zihan, Theo, Ibra, Pau | 13-04-2023|
 
 T: Task
 D: Decision
@@ -25,7 +23,7 @@ I: Information
 
 
 
-# Daily Meeting: 21-03-2023
+# Daily Meeting: 18-04-2023
 
 | Assistant  | Role  |  
 |---|---|
@@ -43,8 +41,8 @@ I: Information
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Meeting per fer Sprint Planning | Zihan, Theo, Ibra, Pau | 21-03-2023|
-| T | Assignació costos model Kanban | Zihan, Theo, Ibra, Pau | 21-03-2023|
+| T | Meeting per fer Sprint Planning | Zihan, Theo, Ibra, Pau | 18-04-2023|
+| T | Assignació costos model Kanban | Zihan, Theo, Ibra, Pau | 18-04-2023|
 
 T: Task
 D: Decision
@@ -52,7 +50,7 @@ I: Information
 
 
 
-# Daily Meeting: 23-03-2023
+# Daily Meeting: 20-04-2023
 
 | Assistant  | Role  |  
 |---|---|
@@ -71,7 +69,7 @@ I: Information
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Creació del login i register | Zihan, Theo, Ibra, Pau | 23-03-2023|
+| T | Creació del login i register | Zihan, Theo, Ibra, Pau | 20-04-2023|
 
 T: Task
 D: Decision
@@ -79,7 +77,7 @@ I: Information
 
 
 
-# Daily Meeting: 28-03-2023
+# Daily Meeting: 25-04-2023
 
 | Assistant  | Role  |  
 |---|---|
@@ -98,9 +96,9 @@ I: Information
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Creació de sales musicals | Zihan, Theo, Ibra, Pau | 28-03-2023|
-| T | Creació de material musical | Zihan, Theo, Ibra, Pau | 28-03-2023|
-| I | Usuari gestor de recursos: gestor. Password: recursos123 | Zihan, Theo, Ibra, Pau | 28-03-2023|
+| T | Creació de sales musicals | Zihan, Theo, Ibra, Pau | 25-04-2023|
+| T | Creació de material musical | Zihan, Theo, Ibra, Pau | 25-04-2023|
+| I | Usuari gestor de recursos: gestor. Password: recursos123 | Zihan, Theo, Ibra, Pau | 25-04-2023|
 
 T: Task
 D: Decision
@@ -108,7 +106,7 @@ I: Information
 
 
 
-# Daily Meeting: 30-03-2023
+# Daily Meeting: 27-04-2023
 
 | Assistant  | Role  |  
 |---|---|
@@ -126,8 +124,8 @@ I: Information
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Creació dels tècnics | Zihan, Theo, Ibra, Pau | 30-03-2023|
-| D | No crear model pels tècnics, serà un usuari | Zihan, Theo, Ibra, Pau | 30-03-2023|
+| T | Creació dels tècnics | Zihan, Theo, Ibra, Pau | 27-04-2023|
+| D | No crear model pels tècnics, serà un usuari | Zihan, Theo, Ibra, Pau | 27-04-2023|
 
 T: Task
 D: Decision
@@ -135,7 +133,7 @@ I: Information
 
 
 
-# Daily Meeting: 04-04-2023
+# Daily Meeting: 02-05-2023
 
 | Assistant  | Role  |  
 |---|---|
@@ -153,8 +151,8 @@ I: Information
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Creació assignations | Zihan, Theo, Ibra, Pau | 04-04-2023|
-| T | Creació reserves | Zihan, Theo, Ibra, Pau | 04-04-2023|
+| T | Creació assignations | Zihan, Theo, Ibra, Pau | 02-05-2023|
+| T | Creació reserves | Zihan, Theo, Ibra, Pau | 02-05-2023|
 
 T: Task
 D: Decision
@@ -162,7 +160,7 @@ I: Information
 
 
 
-# Daily Meeting: 06-04-2023
+# Daily Meeting: 04-05-2023
 
 | Assistant  | Role  |  
 |---|---|
@@ -181,8 +179,8 @@ I: Information
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Elaboració i disseny dels templates | Zihan, Theo, Ibra, Pau | 06-04-2023|
-| T | Incloure urls restants | Zihan, Theo, Ibra, Pau | 06-04-2023|
+| T | Elaboració i disseny dels templates | Zihan, Theo, Ibra, Pau | 04-05-2023|
+| T | Incloure urls restants | Zihan, Theo, Ibra, Pau | 04-05-2023|
 
 T: Task
 D: Decision
@@ -190,7 +188,7 @@ I: Information
 
 
 
-# Daily Meeting: 11-04-2023
+# Daily Meeting: 09-05-2023
 
 | Assistant  | Role  |  
 |---|---|
@@ -209,8 +207,8 @@ I: Information
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Sprint Review: AutoAvaluació | Zihan, Theo, Ibra, Pau | 11-04-2023|
-| T | Sprint Retrospective | Zihan, Theo, Ibra, Pau | 11-04-2023|
+| T | Sprint Review: AutoAvaluació | Zihan, Theo, Ibra, Pau | 09-05-2023|
+| T | Sprint Retrospective | Zihan, Theo, Ibra, Pau | 09-05-2023|
 
 T: Task
 D: Decision
