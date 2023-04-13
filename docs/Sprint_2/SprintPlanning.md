@@ -1,4 +1,4 @@
-# Sprint 1 (16-03-2023)
+# Sprint 1 (13-04-2023)
 
 | Assistant  | Role  |  
 |---|---|
@@ -17,6 +17,8 @@ Considering the proposed distribution in the model Kanban, the overall activitie
 
 | Team Member  | Overall Task Desription  |  
 |---|---|
-| Pau, Ibra, Theo, Zihan | Creació de Wikis, creació del Kanban, creació del repositori de Github |
+| Pau, Ibra, Theo, Zihan | Creació de documents per aquest sprint |
+| Pau, Ibra, Theo, Zihan | Creació del Kanban per aquest sprint |
+| Pau, Ibra, Theo, Zihan | Decisió de la prioritat d'implementació de les user stories amb "agile poker" |
 | Pau, Ibra, Theo, Zihan | Implementació de les user stories situades en el sprint backlog |
 
