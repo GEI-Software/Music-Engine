@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils import timezone
 from .models import *
-from django.views.generic import ListView, UpdateView, CreateView
+from django.views.generic import ListView, UpdateView, CreateView, DeleteView
 from .forms import *
 
 
@@ -63,6 +63,7 @@ class LlistaTecnics(ListView):
     template_name = 'detall_tecnic.html'
     context_object_name = 'tecnic'
 
+
 class AssignmentListView(ListView):
     model = Assignment
     template_name = 'assignment_list.html'
@@ -81,3 +82,11 @@ class StudioCreate(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse_lazy('studio_detail', kwargs={'pk': self.object.pk})
+
+
+class StudioDelete(DeleteView):
+    model = MusicalStudio
+    success_url = reverse_lazy('studio_list')
+
+    def get_template_names(self):
+        return ['musicalstudio_confirm_delete.html']

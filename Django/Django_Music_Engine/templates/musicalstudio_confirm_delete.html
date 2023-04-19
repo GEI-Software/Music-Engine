@@ -1,0 +1,33 @@
+{% include 'navbar.html' %}
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300;800&family=Montserrat:ital,wght@0,300;1,400&display=swap');
+    .container {
+        font-family: "Montserrat", sans-serif;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+        line-height: 50px;
+    }
+    .submit-button{
+        margin-top: 15px;
+        background-color: #9AFC00;
+        font-size: 20px;
+        padding: 10px;
+        cursor: pointer;
+    }
+    .submit-button:hover{
+        transition: 300ms;
+        background-color: #87D015;
+        transform: scale(1.2);
+
+    }
+</style>
+<div class="container">
+    <form method="post">{% csrf_token %}
+
+    <h1>CONFIRM DELETION</h1>
+    <h3>Are you sure you want to delete "{{ object }}"?</h3>
+    <input class="submit-button" type="submit" value="Confirm">
+    </form>
+</div>

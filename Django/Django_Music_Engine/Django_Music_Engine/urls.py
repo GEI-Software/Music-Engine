@@ -34,5 +34,6 @@ urlpatterns = [
     path('reserves/', ReservaListView.as_view(), name='reserva_list'),
     path('llista-tecnics/', LlistaTecnics.as_view(), name='llista_tecnics'),
     path("create/studio/", StudioCreate.as_view()),
+    path('studio/<str:pk>/delete/', StudioDelete.as_view(), name='studio_delete'),
 
 ]

@@ -6,4 +6,7 @@
 <p>Tipus: {{ studio.type }}</p>
 <p>Material incorporat: {{ studio.incorporated_material }}</p>
     <p>(<a class="edit-button" href="{% url 'studio_edit' studio.name %}">edit</a>)</p>
+    <a class="cta" href="{% url 'studio_delete' studio.name %}">
+        <button class="button-delete">Delete</button>
+    </a>
 {% endblock %}
