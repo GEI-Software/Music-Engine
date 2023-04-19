@@ -13,6 +13,9 @@
                 <li><a href="{% url 'studio_detail' studio.name %}">{{ studio.name }}</a></li>
             {% endfor %}
         </ul>
+        <a class="cta" href="/create/studio/">
+            <button class="button">Create New Studio</button>
+        </a>
 {% endif %}
 
 </body>

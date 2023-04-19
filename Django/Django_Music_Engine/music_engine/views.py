@@ -4,7 +4,8 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils import timezone
 from .models import *
-from django.views.generic import ListView, UpdateView
+from django.views.generic import ListView, UpdateView, CreateView
+from .forms import *
 
 
 def studio_detail(request, pk):
@@ -67,3 +68,16 @@ class AssignmentListView(ListView):
     template_name = 'assignment_list.html'
     context_object_name = 'assignments'
     ordering = ['date']
+
+
+class StudioCreate(LoginRequiredMixin, CreateView):
+    model = MusicalStudio
+    template_name = 'studio_form.html'
+    form_class = StudioForm
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(StudioCreate, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('studio_detail', kwargs={'pk': self.object.pk})

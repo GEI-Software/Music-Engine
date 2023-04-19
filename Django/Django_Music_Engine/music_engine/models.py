@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.urls import reverse
 from django.views.generic import ListView
 
 class MusicalMaterial(models.Model):
@@ -11,6 +12,8 @@ class MusicalMaterial(models.Model):
                     ('vent', 'VENT'),
                     ('amplificador', 'AMPLIFICADOR'))
     type = models.CharField(choices=TYPE_CHOICES, max_length=100)
+
+
 
     def __str__(self):
         return self.name
