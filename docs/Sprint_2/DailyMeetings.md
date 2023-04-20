@@ -35,14 +35,14 @@ I: Information
 ## Problems/Difficulties
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
-| Model Kanban | Assignar costos | Zihan, Theo, Ibra, Pau | Problema de convergència en les idees entre els membres del grup |
-| Sprint planning | Realització del sprint planning | Zihan, Theo, Ibra, Pau | Elaboració document Sprint Planning |
+| Creació sales | Gestor pot crear sales | Zihan, Theo, Ibra, Pau | Dificultat amb l'ús de la CreateView de Django |
+| Eliminar sales | Gestor pot eliminar sales | Zihan, Theo, Ibra, Pau | Redirecció cap a la url del template confirm_delete |
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Meeting per fer Sprint Planning | Zihan, Theo, Ibra, Pau | 18-04-2023|
-| T | Assignació costos model Kanban | Zihan, Theo, Ibra, Pau | 18-04-2023|
+| T | Correccions en el codi d'aspectes referents al sprint 1 | Zihan, Theo, Ibra, Pau | 18-04-2023|
+| T | Implementació de que el gestor pugui crear i eliminar sales | Pau | 18-04-2023|
 
 T: Task
 D: Decision
@@ -62,14 +62,17 @@ I: Information
 ## Problems/Difficulties
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
-| Error en el login i register | Implementació User Stories 1.1 | Theo, Pau | Problemes a l'hora d'implementar el login en Django |
-| Error en la modificació | Implementació User Stories 2.5 | Zihan, Pau | Problemes a d'implementar el edit|
+| Nombre molt elevat de user stories | Acabar d'afegir user stories al Kanban | Theo, Pau, Zihan, Ibra | Problemes a l'hora de calcular el cost de tantes user stories |
+| Errors i warnings en el codi | Implementació User Stories | Zihan, Pau | Problemes habituals en la implementació amb django |
 
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Creació del login i register | Zihan, Theo, Ibra, Pau | 20-04-2023|
+| T | Acabar d'afegir user stories al Kanban (les del tècnic) | Zihan, Theo, Ibra, Pau | 20-04-2023|
+| T | Recalcular costos | Zihan, Theo, Ibra, Pau | 20-04-2023|
+| T | Implementació d'alguna user story | Zihan, Theo, Ibra, Pau | 20-04-2023|
+
 
 T: Task
 D: Decision
