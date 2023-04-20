@@ -10,7 +10,7 @@
 ## Spring Planing Overview
 
 *Here you need to include a picture of the Spring Planning in the model Kanban*
-![image](https://user-images.githubusercontent.com/73642702/226584904-989619c8-7f3e-4eb5-bb66-a7cef09e299c.png)
+![image](https://user-images.githubusercontent.com/73642702/233299498-f15c5bcf-ba7d-4982-97e3-6bf7aa603146.png)
 
 
 Considering the proposed distribution in the model Kanban, the overall activities to be performed by the team are: 
