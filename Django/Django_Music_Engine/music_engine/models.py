@@ -1,7 +1,8 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.contrib.auth.models import User
-from django.urls import reverse
-from django.views.generic import ListView
+from datetime import date
+
 
 class MusicalMaterial(models.Model):
     name = models.CharField(max_length=100, primary_key=True)
@@ -59,3 +60,9 @@ class Assignment(models.Model):
 
     def __str__(self):
         return f"{self.studio} - {self.material} - {self.technician} - {self.date}"
+
+
+class HoursRecord(models.Model):
+    date = models.DateField(primary_key=True, default=date.today)
+    hours = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(8)], default=0)
+    technician = models.ForeignKey(User, on_delete=models.CASCADE)

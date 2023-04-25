@@ -1,0 +1,36 @@
+{% include 'navbar.html' %}
+
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Dia</th>
+        <th>Hores Treballades</th>
+        <th>Tècnic</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for h in hours %}
+        <tr>
+            {% if user.username != 'comercial' %}
+                {% if h.technician == user %}
+                <td>{{ h.date }}</td>
+                <td>{{ h.hours }}</td>
+                <td>{{ h.technician.first_name }}</td>
+                {% endif %}
+            {% else %}
+                <td>{{ h.date }}</td>
+                <td>{{ h.hours }}</td>
+                <td>{{ h.technician.first_name }}</td>
+            {% endif %}
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% if user.username != 'comercial' %}
+    &nbsp<a class="cta" href="/create/hour_record/">
+    &nbsp<button class="button">Add New Record</button>
+    </a>
+{% endif %}
+
+</body>

@@ -119,3 +119,22 @@ class MaterialDelete(DeleteView):
 
     def get_template_names(self):
         return ['musicalmaterial_confirm_delete.html']
+
+
+class HoursListView(ListView):
+    model = HoursRecord
+    template_name = 'hours_list.html'
+    context_object_name = 'hours'
+
+
+class HourRecordCreate(LoginRequiredMixin, CreateView):
+    model = HoursRecord
+    template_name = 'hour_record_form.html'
+    form_class = HourRecordForm
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(HourRecordCreate, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('hours_list')

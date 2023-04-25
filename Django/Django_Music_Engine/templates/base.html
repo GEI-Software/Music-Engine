@@ -16,6 +16,10 @@
                         <li>&nbsp<a href="{% url 'llista_tecnics' %}">Personal Tècnic</a></li>
                         &nbsp
                     {% endif %}
+                    {% if user.username == 'tecnic' %}
+                        <li>&nbsp<a href="{% url 'assignment_list' %}">Asignaciones o Peticiones</a></li>
+                        <li>&nbsp<a href="{% url 'hours_list' %}">Hores Treballades</a></li>
+                    {% endif %}
                     <li>&nbsp<a href="{% url 'logout' %}">Tancar sessió</a></li>
                 {% else %}
                 <a class="cta" href="/accounts/login">

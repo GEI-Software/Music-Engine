@@ -40,4 +40,6 @@ urlpatterns = [
     path('material/<str:pk>/edit',
          MaterialUpdate.as_view(model=MusicalMaterial, form_class=MaterialForm),
          name='material_edit'),
+    path('hours/', HoursListView.as_view(), name='hours_list'),
+    path("create/hour_record/", HourRecordCreate.as_view()),
 ]
