@@ -85,23 +85,23 @@ I: Information
 | Assistant  | Role  |  
 |---|---|
 | Zihan, Ibra, Theo, Pau  | Developer  |   
-| Theo, Zihan |  Front-End Expert |  
+| Theo, Zihan, Pau, Ibra |  Front-End Expert |  
 | Pau |  Scrum Master |  
 
 
 ## Problems/Difficulties
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
-| Urls llistats | Implementació User Story 1.2, 1.3, 2.2 | Zihan, Theo, Ibra, Pau | Dificultats amb la pk string |
-| Templates | Implementació User Story 1.2, 1.3, 2.2 | Theo, Pau | Dificultats en els 'include/extends' dels templates html |
+| Inserció imatge | Inserció imatges | Zihan, Theo, Ibra, Pau | Dificultats amb la ruta per inserir imatges en html/css |
+| Tot amb la mateixa tipografia | Correcció aspectes gràfics | Theo, Pau | Dificultats en posar-ho tot amb la mateixa tipografia |
 
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Creació de sales musicals | Zihan, Theo, Ibra, Pau | 25-04-2023|
-| T | Creació de material musical | Zihan, Theo, Ibra, Pau | 25-04-2023|
-| I | Usuari gestor de recursos: gestor. Password: recursos123 | Zihan, Theo, Ibra, Pau | 25-04-2023|
+| T | Desenvolupar Front-end | Zihan, Theo, Ibra, Pau | 25-04-2023|
+| T | Inserció imatges | Zihan, Theo, Ibra, Pau | 25-04-2023|
+| T | Correcció aspectes gràfics | Zihan, Theo, Ibra, Pau | 25-04-2023|
 
 T: Task
 D: Decision
