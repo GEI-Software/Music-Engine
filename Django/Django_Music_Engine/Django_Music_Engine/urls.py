@@ -29,11 +29,15 @@ urlpatterns = [
     path('material/<str:pk>/', material_detail, name='material_detail'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('studio/<str:pk>/edit',
-         LoginRequiredCheckIsOwnerUpdateView.as_view(model=MusicalStudio, form_class=StudioForm),
+         StudioUpdate.as_view(model=MusicalStudio, form_class=StudioForm),
          name='studio_edit'),
     path('reserves/', ReservaListView.as_view(), name='reserva_list'),
     path('llista-tecnics/', LlistaTecnics.as_view(), name='llista_tecnics'),
     path("create/studio/", StudioCreate.as_view()),
     path('studio/<str:pk>/delete/', StudioDelete.as_view(), name='studio_delete'),
-
+    path("create/material/", MaterialCreate.as_view()),
+    path('material/<str:pk>/delete/', MaterialDelete.as_view(), name='material_delete'),
+    path('material/<str:pk>/edit',
+         MaterialUpdate.as_view(model=MusicalMaterial, form_class=MaterialForm),
+         name='material_edit'),
 ]

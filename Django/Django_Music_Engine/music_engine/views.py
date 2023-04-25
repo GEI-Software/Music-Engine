@@ -44,12 +44,20 @@ class CheckIsOwnerMixin(object):
         return obj
 
 
-class LoginRequiredCheckIsOwnerUpdateView(LoginRequiredMixin, CheckIsOwnerMixin, UpdateView):
+class StudioUpdate(LoginRequiredMixin, CheckIsOwnerMixin, UpdateView):
     template_name = 'studio_form.html'
     model = MusicalStudio
 
     def get_success_url(self):
         return reverse_lazy('studio_detail', kwargs={'pk': self.object.pk})
+
+
+class MaterialUpdate(LoginRequiredMixin, CheckIsOwnerMixin, UpdateView):
+    template_name = 'material_form.html'
+    model = MusicalMaterial
+
+    def get_success_url(self):
+        return reverse_lazy('material_detail', kwargs={'pk': self.object.pk})
 
 
 class ReservaListView(ListView):
@@ -90,3 +98,24 @@ class StudioDelete(DeleteView):
 
     def get_template_names(self):
         return ['musicalstudio_confirm_delete.html']
+
+
+class MaterialCreate(LoginRequiredMixin, CreateView):
+    model = MusicalMaterial
+    template_name = 'material_form.html'
+    form_class = MaterialForm
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(MaterialCreate, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('material_detail', kwargs={'pk': self.object.pk})
+
+
+class MaterialDelete(DeleteView):
+    model = MusicalMaterial
+    success_url = reverse_lazy('material_list')
+
+    def get_template_names(self):
+        return ['musicalmaterial_confirm_delete.html']

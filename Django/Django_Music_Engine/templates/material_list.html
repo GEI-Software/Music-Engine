@@ -14,6 +14,10 @@
                 <li>&nbsp <a href="{% url 'material_detail' material.name %}">{{ material.name }}</a></li>
             {% endfor %}
         </ul>
+    &nbsp
+    <a class="cta" href="/create/material/">
+    &nbsp<button class="button">Create New Material</button>
+</a>
 {% endif %}
 
 </body>
