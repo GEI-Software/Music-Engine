@@ -7,14 +7,16 @@
 </head>
 <body>
 {% if user.is_authenticated %}
-    <h1>Studio's list</h1>
+    <h1>&nbspStudio's list</h1>
         <ul>
             {% for studio in studios %}
-                <li><a href="{% url 'studio_detail' studio.name %}">{{ studio.name }}</a></li>
+                <li>&nbsp&nbsp<a href="{% url 'studio_detail' studio.name %}">{{ studio.name }}</a></li>
             {% endfor %}
+        &nbsp
         </ul>
+
         <a class="cta" href="/create/studio/">
-            <button class="button">Create New Studio</button>
+            &nbsp<button class="button">Create New Studio</button>
         </a>
 {% endif %}
 
