@@ -138,3 +138,30 @@ class HourRecordCreate(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse_lazy('hours_list')
+
+class ReceipListView(ListView):
+    model = Receip
+    template_name = 'finance/financial_data_list.html'
+    context_object_name = 'Receip'
+
+class ReceipDetailView(DeleteView):
+    model = Receip
+    template_name = 'finance/financial_data_detail.html'
+    context_object_name = 'Receip'
+
+class ReceipCreateView(CreateView):
+    model = Receip
+    template_name = 'finance/financial_data_form.html'
+    fields = ['name', 'data', 'subject', 'cost']
+
+class ReceipUpdateView(UpdateView):
+    model = Receip
+    template_name = 'finance/financial_data_form.html'
+    fields = ['name', 'data', 'subject', 'cost']
+
+class ReceipDelateView(DeleteView):
+    model = Receip
+    template_name = 'finance/financial_data_remove.html'
+    success_url = reverse_lazy('financial_data_list')
+
+
