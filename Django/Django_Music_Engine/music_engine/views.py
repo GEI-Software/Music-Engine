@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils import timezone
 from .models import *
-from django.views.generic import ListView, UpdateView, CreateView, DeleteView
+from django.views.generic import ListView, UpdateView, CreateView, DeleteView, DetailView
 from .forms import *
 
 
@@ -144,7 +144,7 @@ class ReceipListView(ListView):
     template_name = 'finance/financial_data_list.html'
     context_object_name = 'Receip'
 
-class ReceipDetailView(DeleteView):
+class ReceipDetailView(DetailView): #pk auto
     model = Receip
     template_name = 'finance/financial_data_detail.html'
     context_object_name = 'Receip'

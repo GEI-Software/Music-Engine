@@ -43,9 +43,9 @@ urlpatterns = [
     path('hours/', HoursListView.as_view(), name='hours_list'),
     path("create/hour_record/", HourRecordCreate.as_view()),
     path('dades/',ReceipListView.as_view(), name='financial_data_list'),
-    path('dades/<int:pk>/',ReceipDetailView.as_view(), name='detail_list'),
-    path('dades/create/',ReceipCreateView.as_view(), name='Create_list'),
-    path('dades/<int:pk>/update/', ReceipUpdateView.as_view(), name='update'),
-    path('dades/<int:pk>/delete/', ReceipDelateView.as_view(), name='delete'),
+    path('dades/<int:pk>/',ReceipDetailView.as_view(), name='financial_data_detail'),
+    path('dades/create/', ReceipCreateView.as_view(), name='financial_data_create'), #Check view
+    path('dades/<int:pk>/update/', ReceipUpdateView.as_view(), name='financial_data_update'),
+    path('dades/<int:pk>/delete/', ReceipDelateView.as_view(), name='financial_data_delete'),
 
 ]
