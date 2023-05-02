@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils import timezone
 from .models import *
-from django.views.generic import ListView, UpdateView, CreateView, DeleteView
+from django.views.generic import ListView, UpdateView, CreateView, DeleteView, DetailView
 from .forms import *
 
 
@@ -138,3 +138,30 @@ class HourRecordCreate(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse_lazy('hours_list')
+
+class ReceipListView(ListView):
+    model = Receip
+    template_name = 'finance/financial_data_list.html'
+    context_object_name = 'Receip'
+
+class ReceipDetailView(DetailView): #pk auto
+    model = Receip
+    template_name = 'finance/financial_data_detail.html'
+    context_object_name = 'Receip'
+
+class ReceipCreateView(CreateView):
+    model = Receip
+    template_name = 'finance/financial_data_form.html'
+    fields = ['name', 'data', 'subject', 'cost']
+
+class ReceipUpdateView(UpdateView):
+    model = Receip
+    template_name = 'finance/financial_data_form.html'
+    fields = ['name', 'data', 'subject', 'cost']
+
+class ReceipDelateView(DeleteView):
+    model = Receip
+    template_name = 'finance/financial_data_remove.html'
+    success_url = reverse_lazy('financial_data_list')
+
+

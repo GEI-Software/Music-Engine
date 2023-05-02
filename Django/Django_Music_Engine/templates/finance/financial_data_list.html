@@ -1,0 +1,43 @@
+{% include 'navbar.html' %}
+<!--- LIST OR TABLE OF DATA  --->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dades financieres</title>
+</head>
+<body>
+<h2>Dades financieres</h2>
+<table>
+    <thead>
+      <tr>
+        <th>Número de factura</th>
+        <th>Data</th>
+        <th>Asumpete</th>
+        <th>Import</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for receip in facturas %}
+        <tr>
+          <td>{{ receip.numero }}</td>
+          <td>{{ receip.fecha }}</td>
+          <td>{{ receip.concepto }}</td>
+          <td>{{ receip.importe }}</td>
+          <td>
+              <ul>
+                <li><a href="{% url 'financial_data_form' receip.pk %}">Editar</a></li>
+                <li><a href="{% url 'financial_data_remove' receip.pk %}">Elimiar</a></li>
+              </ul>
+          </td>
+        </tr>
+      {% empty %}
+        <tr>
+          <td colspan="5">No hay facturas registradas.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+</html>
