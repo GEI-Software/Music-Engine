@@ -71,7 +71,8 @@ class HoursRecord(models.Model):
 
 
 class Receip(models.Model):
-    name = models.ForeignKey(Assignment,on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    #name = models.ForeignKey(Assignment,on_delete=models.CASCADE)
     data = models.DateField(_("Date"), default=date.today)
     subject = models.CharField(max_length=50)
     cost = models.DecimalField(max_digits=7, decimal_places=2)

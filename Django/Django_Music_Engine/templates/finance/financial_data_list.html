@@ -1,43 +1,41 @@
 {% include 'navbar.html' %}
 <!--- LIST OR TABLE OF DATA  --->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Dades financieres</title>
-</head>
+
 <body>
-<h2>Dades financieres</h2>
+<h1>&nbsp Dades financeres</h1>
 <table>
     <thead>
       <tr>
-        <th>Número de factura</th>
+        <th>Nom de factura</th>
         <th>Data</th>
-        <th>Asumpete</th>
+        <th>Assumpte</th>
         <th>Import</th>
+        <th>Options</th>
       </tr>
     </thead>
     <tbody>
-      {% for receip in facturas %}
+      {% for r in factures %}
         <tr>
-          <td>{{ receip.numero }}</td>
-          <td>{{ receip.fecha }}</td>
-          <td>{{ receip.concepto }}</td>
-          <td>{{ receip.importe }}</td>
+          <td>{{ r.name }}</td>
+          <td>{{ r.data }}</td>
+          <td>{{ r.subject }}</td>
+          <td>{{ r.cost }}</td>
           <td>
               <ul>
-                <li><a href="{% url 'financial_data_form' receip.pk %}">Editar</a></li>
-                <li><a href="{% url 'financial_data_remove' receip.pk %}">Elimiar</a></li>
+                <li><a href="{% url 'financial_data_update' r.pk %}">Editar</a></li>
+                <li><a href="{% url 'financial_data_delete' r.pk %}">Elimiar</a></li>
               </ul>
           </td>
         </tr>
       {% empty %}
         <tr>
-          <td colspan="5">No hay facturas registradas.</td>
+          <td colspan="5">No hi ha factures registrades.</td>
         </tr>
       {% endfor %}
+
     </tbody>
   </table>
-
+    &nbsp<a class="cta" href="/dades/create/">
+    &nbsp<button class="button">Add New Record</button>
+    </a>
 </body>
-</html>

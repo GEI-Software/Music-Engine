@@ -139,10 +139,11 @@ class HourRecordCreate(LoginRequiredMixin, CreateView):
     def get_success_url(self):
         return reverse_lazy('hours_list')
 
+
 class ReceipListView(ListView):
     model = Receip
     template_name = 'finance/financial_data_list.html'
-    context_object_name = 'Receip'
+    context_object_name = 'factures'
 
 class ReceipDetailView(DetailView): #pk auto
     model = Receip
@@ -154,10 +155,20 @@ class ReceipCreateView(CreateView):
     template_name = 'finance/financial_data_form.html'
     fields = ['name', 'data', 'subject', 'cost']
 
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(ReceipCreateView, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('financial_data_list')
+
 class ReceipUpdateView(UpdateView):
     model = Receip
     template_name = 'finance/financial_data_form.html'
     fields = ['name', 'data', 'subject', 'cost']
+
+    def get_success_url(self):
+        return reverse_lazy('financial_data_list')
 
 class ReceipDelateView(DeleteView):
     model = Receip

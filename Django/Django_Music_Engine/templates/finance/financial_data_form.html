@@ -1,17 +1,30 @@
-{% include 'navbar.html' %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-<h3>Nuevo Factura</h3>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Guardar</button>
-  </form>
+{% include "navbar.html" %}
 
-</body>
-</html>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@300;800&family=Montserrat:ital,wght@0,300;1,400&display=swap');
+    .container {
+        font-family: "Montserrat", sans-serif;
+        margin-left: 30px;
+        margin-bottom: 20px;
+    }
+    .button{
+        margin-top: 15px;
+    }
+</style>
+
+    <div class="container">
+        <h4>Editar Material Musical</h4>
+
+        <form method="post" enctype="multipart/form-data" action="">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+
+            <input type="submit" value="Submit"/>
+        </form>
+
+        <a class="cta" href="/">
+                <button class="button">Back Home</button>
+        </a>
+    </div>
