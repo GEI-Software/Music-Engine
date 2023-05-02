@@ -121,22 +121,22 @@ I: Information
 ## Problems/Difficulties
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
-| Emmagatzemament usuaris tècnics | Implementació User Story 1.4 | Zihan, Theo, Ibra, Pau | Algunes dificultats  amb l'emmagatzemament a la BBDD |
+| Problemes per cargar les vistes | Implementació User Story 2.3 | Zihan, Theo, Ibra, Pau | Al executar Django les vistes no apareixen correctament |
+| Problemes en html | Implementació User Story 3.2 | Zihan, Theo, Ibra, Pau | Errors en el template de html |
 
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Creació dels tècnics | Zihan, Theo, Ibra, Pau | 27-04-2023|
-| D | No crear model pels tècnics, serà un usuari | Zihan, Theo, Ibra, Pau | 27-04-2023|
+| T | Arreglar les vistes | Zihan, Theo, Ibra, Pau | 27-04-2023|
+| D | Corregir les templates html | Zihan, Theo, Ibra, Pau | 27-04-2023|
 
 T: Task
 D: Decision
 I: Information
 
 
-
-# Daily Meeting: 02-05-2023
+# Daily Meeting: 04-05-2023
 
 | Assistant  | Role  |  
 |---|---|
@@ -148,18 +148,20 @@ I: Information
 ## Problems/Difficulties
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
-| Claus forànies | Crear assignacions i reserves | Zihan, Theo, Ibra, Pau | Dificultats amb la quantitat de dependències amb les claus forànies |
+| Llenguatge HTML i CSS | Elaboració templates restants | Zihan, Theo, Ibra, Pau | Problema en el nostre poc coneixement sobre HTML i CSS |
+| Urls restants | Incloure urls | Ibra, Zihan | Dificultats amb alguna url |
 
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Creació assignations | Zihan, Theo, Ibra, Pau | 02-05-2023|
-| T | Creació reserves | Zihan, Theo, Ibra, Pau | 02-05-2023|
+| T | Elaboració i disseny dels templates | Zihan, Theo, Ibra, Pau | 04-05-2023|
+| T | Incloure urls restants | Zihan, Theo, Ibra, Pau | 04-05-2023|
 
 T: Task
 D: Decision
 I: Information
+
 
 
 
