@@ -136,7 +136,9 @@ D: Decision
 I: Information
 
 
-# Daily Meeting: 04-05-2023
+
+
+# Daily Meeting: 02-05-2023
 
 | Assistant  | Role  |  
 |---|---|
@@ -148,19 +150,20 @@ I: Information
 ## Problems/Difficulties
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
-| Llenguatge HTML i CSS | Elaboració templates restants | Zihan, Theo, Ibra, Pau | Problema en el nostre poc coneixement sobre HTML i CSS |
-| Urls restants | Incloure urls | Ibra, Zihan | Dificultats amb alguna url |
+| No hi ha hagut problemes  | Implementació User Stories 1.3 | Zihan, Theo, Ibra, Pau | - |
+| Problemes en la creació models  | Implementació User Stories 1.2 | Zihan, Theo, Ibra, Pau | Fallo en la creació dels models |
 
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Elaboració i disseny dels templates | Zihan, Theo, Ibra, Pau | 04-05-2023|
-| T | Incloure urls restants | Zihan, Theo, Ibra, Pau | 04-05-2023|
+| T | Creació assignations | Zihan, Theo, Ibra, Pau | 02-05-2023|
+| T | Creació reserves | Zihan, Theo, Ibra, Pau | 02-05-2023|
 
 T: Task
 D: Decision
 I: Information
+
 
 
 
