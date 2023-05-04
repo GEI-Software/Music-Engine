@@ -21,6 +21,9 @@ from music_engine.forms import *
 
 urlpatterns = [
     path('', home, name='home'),
+    ##registre
+    path('register/',register, name='register'),
+    #########
     path('admin/', admin.site.urls),
     path('studios/', StudioListView.as_view(), name='studio_list'),
     path('studio/<str:pk>/', studio_detail, name='studio_detail'),

@@ -1,7 +1,9 @@
+from django.contrib.auth import authenticate
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
+from django.contrib import messages
 from django.utils import timezone
 from .models import *
 from django.views.generic import ListView, UpdateView, CreateView, DeleteView, DetailView
@@ -176,3 +178,41 @@ class ReceipDelateView(DeleteView):
     success_url = reverse_lazy('financial_data_list')
 
 
+def log_in(request):
+
+    if request.method == 'GET':
+        form = LoginForm()
+        return render(request, 'registration/login.html', {'form': form})
+
+    elif request.method == 'POST':
+        form = LoginForm(request.POST)
+
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            client = authenticate(request,username=username,password=password)
+            if client:
+                log_in(request, client)
+                messages.success(request,f'Hi {username.title()}, retorn back')
+                return redirect('post')
+
+        messages.error(request, f'Invalid username or password')
+        return render(request, 'registration/login.html', {'form': form})
+
+
+def register(request):
+    if request.method == 'GET':
+        form = RegisterForm()
+        return render(request, 'registration/register.html', {'form': form})
+
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.username = user.username.lower()
+            user.save()
+            messages.success(request, 'You have singed up successfully.')
+            login(request, user)
+            return redirect('posts')
+        else:
+            return render(request, 'registration/register.html', {'form': form})
