@@ -157,8 +157,7 @@ I: Information
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Creació assignations | Zihan, Theo, Ibra, Pau | 02-05-2023|
-| T | Creació reserves | Zihan, Theo, Ibra, Pau | 02-05-2023|
+| T | Resolt problemes de la creació de models | Zihan, Theo, Ibra, Pau | 02-05-2023|
 
 T: Task
 D: Decision
@@ -180,15 +179,15 @@ I: Information
 ## Problems/Difficulties
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
-| Llenguatge HTML i CSS | Elaboració templates restants | Zihan, Theo, Ibra, Pau | Problema en el nostre poc coneixement sobre HTML i CSS |
-| Urls restants | Incloure urls | Ibra, Zihan | Dificultats amb alguna url |
+| Problemes en la creació del models 'edit_personal_info' | Implementació User Stories 3.1 | Zihan, Theo, Ibra, Pau | Error en la migració de models |
+| Problemes en el html del technical personnel | Implementació User Stories 3.1 | Zihan, Theo, Ibra, Pau | Error en la plantilla html |
 
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
 | T | Elaboració i disseny dels templates | Zihan, Theo, Ibra, Pau | 04-05-2023|
-| T | Incloure urls restants | Zihan, Theo, Ibra, Pau | 04-05-2023|
+| T | Solucionat plantilla html, eliminació d'un camp rendundant | Zihan, Theo, Ibra, Pau | 04-05-2023|
 
 T: Task
 D: Decision
