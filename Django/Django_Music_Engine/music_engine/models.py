@@ -65,7 +65,8 @@ class Assignment(models.Model):
 
 
 class HoursRecord(models.Model):
-    date = models.DateField(primary_key=True, default=date.today)
+    id = models.IntegerField(primary_key=True, auto_created=True)
+    date = models.DateField(default=date.today)
     hours = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(8)], default=0)
     technician = models.ForeignKey(User, on_delete=models.CASCADE)
 

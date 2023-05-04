@@ -42,6 +42,8 @@ urlpatterns = [
          name='material_edit'),
     path('hours/', HoursListView.as_view(), name='hours_list'),
     path("create/hour_record/", HourRecordCreate.as_view()),
+    path('update/<int:pk>/hour/', HourUpdateView.as_view(), name='hours_update'),
+    path('delete/<int:pk>/hour/', HourDeleteView.as_view(), name='hours_delete'),
     path('dades/',ReceipListView.as_view(), name='financial_data_list'),
     path('dades/<int:pk>/',ReceipDetailView.as_view(), name='financial_data_detail'),
     path('dades/create/', ReceipCreateView.as_view(), name='financial_data_create'), #Check view

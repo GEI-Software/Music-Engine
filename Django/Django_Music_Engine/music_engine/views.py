@@ -140,6 +140,21 @@ class HourRecordCreate(LoginRequiredMixin, CreateView):
         return reverse_lazy('hours_list')
 
 
+class HourUpdateView(UpdateView):
+    model = HoursRecord
+    template_name = 'hour_record_form.html'
+    fields = ['date', 'hours', 'technician']
+
+    def get_success_url(self):
+        return reverse_lazy('hours_list')
+
+
+class HourDeleteView(DeleteView):
+    model = HoursRecord
+    template_name = 'hour_record_delete.html'
+    success_url = reverse_lazy('hours_list')
+
+
 class ReceipListView(ListView):
     model = Receip
     template_name = 'finance/financial_data_list.html'

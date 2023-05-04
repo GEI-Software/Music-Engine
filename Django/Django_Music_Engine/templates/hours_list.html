@@ -7,6 +7,7 @@
         <th>Dia</th>
         <th>Hores Treballades</th>
         <th>Tècnic</th>
+        <th>Options</th>
     </tr>
     </thead>
     <tbody>
@@ -17,6 +18,12 @@
                 <td>{{ h.date }}</td>
                 <td>{{ h.hours }}</td>
                 <td>{{ h.technician.first_name }}</td>
+                <td>
+                  <ul>
+                    <li><a href="{% url 'hours_update' h.pk %}">Editar</a></li>
+                    <li><a href="{% url 'hours_delete' h.pk %}">Elimiar</a></li>
+                  </ul>
+                </td>
                 {% endif %}
             {% else %}
                 <td>{{ h.date }}</td>
