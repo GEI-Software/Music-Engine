@@ -145,10 +145,12 @@ class ReceipListView(ListView):
     template_name = 'finance/financial_data_list.html'
     context_object_name = 'factures'
 
-class ReceipDetailView(DetailView): #pk auto
+
+class ReceipDetailView(DetailView):  # pk auto
     model = Receip
     template_name = 'finance/financial_data_detail.html'
     context_object_name = 'Receip'
+
 
 class ReceipCreateView(CreateView):
     model = Receip
@@ -160,7 +162,8 @@ class ReceipCreateView(CreateView):
         return super(ReceipCreateView, self).form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('financial_data_list')
+        return reverse_lazy('financia   l_data_list')
+
 
 class ReceipUpdateView(UpdateView):
     model = Receip
@@ -170,9 +173,9 @@ class ReceipUpdateView(UpdateView):
     def get_success_url(self):
         return reverse_lazy('financial_data_list')
 
+
 class ReceipDelateView(DeleteView):
     model = Receip
     template_name = 'finance/financial_data_remove.html'
     success_url = reverse_lazy('financial_data_list')
-
 

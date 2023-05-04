@@ -18,3 +18,10 @@ class HourRecordForm(forms.ModelForm):
     class Meta:
         model = HoursRecord
         fields = ['date', 'hours', 'technician']
+
+
+class TecnicInfoForm(forms.ModelForm):
+    class Meta:
+        model = CaracteristicTecnic
+        fields = ['dni', 'name', 'last_name']
+

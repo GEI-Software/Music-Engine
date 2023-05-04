@@ -16,8 +16,6 @@ class MusicalMaterial(models.Model):
                     ('amplificador', 'AMPLIFICADOR'))
     type = models.CharField(choices=TYPE_CHOICES, max_length=100)
 
-
-
     def __str__(self):
         return self.name
 
@@ -53,7 +51,8 @@ class technical_personnel(models.Model):
 
     def __str__(self):
         return f"{self.name} {self.last_name}"
-    
+
+
 class Assignment(models.Model):
     studio = models.ForeignKey(MusicalStudio, on_delete=models.CASCADE)
     material = models.ForeignKey(MusicalMaterial, on_delete=models.CASCADE)
@@ -72,13 +71,13 @@ class HoursRecord(models.Model):
 
 class Receip(models.Model):
     name = models.CharField(max_length=100)
-    #name = models.ForeignKey(Assignment,on_delete=models.CASCADE)
+    # name = models.ForeignKey(Assignment,on_delete=models.CASCADE)
     data = models.DateField(_("Date"), default=date.today)
     subject = models.CharField(max_length=50)
     cost = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
-        return  f"Receip:{self.name} {self.data} {self.subject} {self.cost}"
+        return f"Receip:{self.name} {self.data} {self.subject} {self.cost}"
 
     def url_route(self):
         return reverse('financial_data', args=[str(self.name)])
@@ -88,5 +87,9 @@ class Receip2(models.Model):
     pass
 
 
+class CaracteristicTecnic(models.Model):
+    tecnic_info = models.OneToOneField(technical_personnel, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.tecnic_info.name} {self.tecnic_info.last_name}"
 
