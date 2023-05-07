@@ -50,6 +50,8 @@ class technical_personnel(models.Model):
     dni = models.CharField(max_length=30)
     name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
+    specialty = models.CharField(max_length=50,default='none')
+    experience = models.IntegerField(default=0, blank=True, null=True)
 
     def __str__(self):
         return f"{self.name} {self.last_name}"

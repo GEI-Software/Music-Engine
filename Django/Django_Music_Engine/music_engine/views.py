@@ -71,6 +71,11 @@ class LlistaTecnics(ListView):
     template_name = 'detall_tecnic.html'
     context_object_name = 'tecnic'
 
+class CharacteristicTechinicalPersonview(ListView):
+    model = technical_personnel
+    template_name = 'characteristic_technical.html'
+    context_object_name = 'tecnic'
+
 
 class AssignmentListView(ListView):
     model = Assignment

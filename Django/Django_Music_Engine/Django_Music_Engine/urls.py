@@ -33,6 +33,7 @@ urlpatterns = [
          name='studio_edit'),
     path('reserves/', ReservaListView.as_view(), name='reserva_list'),
     path('llista-tecnics/', LlistaTecnics.as_view(), name='llista_tecnics'),
+    path('caracteristiques/',CharacteristicTechinicalPersonview.as_view(),name='characteristic_technical'),
     path("create/studio/", StudioCreate.as_view()),
     path('studio/<str:pk>/delete/', StudioDelete.as_view(), name='studio_delete'),
     path("create/material/", MaterialCreate.as_view()),
