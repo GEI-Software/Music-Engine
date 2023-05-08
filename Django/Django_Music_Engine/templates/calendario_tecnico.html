@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Calendario Técnico</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'calendario_tecnico.css' %}">
+  </head>
+  <body>
+    <h1>Calendario Técnico</h1>
+    <div class="calendar">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="7">{{ date_obj|date:"F Y" }}</th>
+          </tr>
+          <tr>
+            <th>Lun</th>
+            <th>Mar</th>
+            <th>Mie</th>
+            <th>Jue</th>
+            <th>Vie</th>
+            <th>Sab</th>
+            <th>Dom</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for week in month_weeks %}
+            <tr>
+              {% for day, weekday in week %}
+                {% if day %}
+                  {% if day == date_obj.day and forloop.parentloop.counter == 1 %}
+                    <td class="today"><a href="{% url 'disponibilidad' year=date_obj.year month=date_obj.month day=day %}">{{ day }}</a></td>
+                  {% else %}
+                    <td><a href="{% url 'disponibilidad' year=date_obj.year month=date_obj.month day=day %}">{{ day }}</a></td>
+                  {% endif %}
+                {% else %}
+                  <td class="noday">&nbsp;</td>
+                {% endif %}
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
+
+

@@ -20,6 +20,7 @@
                         <li>&nbsp<a href="{% url 'assignment_list' %}">Asignaciones o Peticiones</a></li>
                         <li>&nbsp<a href="{% url 'hours_list' %}">Hores Treballades</a></li>
                         <li>&nbsp<a href="{% url 'characteristic_technical' %}">Caracteristiques</a></li>
+                        <li>&nbsp<a href="{% url 'calendario' %}">Disponibilitat</a></li>
                     {% endif %}
                     {% if user.username == 'comercial' %}
                         <li>&nbsp<a href="{% url 'hours_list' %}">Hores Treballades</a></li>
