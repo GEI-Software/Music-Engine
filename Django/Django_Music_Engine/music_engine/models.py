@@ -16,8 +16,6 @@ class MusicalMaterial(models.Model):
                     ('amplificador', 'AMPLIFICADOR'))
     type = models.CharField(choices=TYPE_CHOICES, max_length=100)
 
-
-
     def __str__(self):
         return self.name
 
@@ -50,12 +48,13 @@ class technical_personnel(models.Model):
     dni = models.CharField(max_length=30)
     name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
-    specialty = models.CharField(max_length=50,default='none')
+    specialty = models.CharField(max_length=50, default='none')
     experience = models.IntegerField(default=0, blank=True, null=True)
 
     def __str__(self):
         return f"{self.name} {self.last_name}"
-    
+
+
 class Assignment(models.Model):
     studio = models.ForeignKey(MusicalStudio, on_delete=models.CASCADE)
     material = models.ForeignKey(MusicalMaterial, on_delete=models.CASCADE)
@@ -75,13 +74,13 @@ class HoursRecord(models.Model):
 
 class Receip(models.Model):
     name = models.CharField(max_length=100)
-    #name = models.ForeignKey(Assignment,on_delete=models.CASCADE)
+    # name = models.ForeignKey(Assignment,on_delete=models.CASCADE)
     data = models.DateField(_("Date"), default=date.today)
     subject = models.CharField(max_length=50)
     cost = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
-        return  f"Receip:{self.name} {self.data} {self.subject} {self.cost}"
+        return f"Receip:{self.name} {self.data} {self.subject} {self.cost}"
 
     def url_route(self):
         return reverse('financial_data', args=[str(self.name)])
@@ -91,5 +90,19 @@ class Receip2(models.Model):
     pass
 
 
+class Client(models.Model):
+    nom = models.CharField(max_length=100)
+    cognom = models.CharField(max_length=100)
+    correo_electronico = models.EmailField()
+
+    def __str__(self):
+        return f"{self.nom} {self.cognom}"
 
 
+class Comercial(models.Model):
+    name = models.CharField(max_length=50)
+    cognom = models.CharField(max_length=50)
+    email = models.EmailField()
+
+    def __str__(self):
+        return f"{self.nom} {self.cognom}"
