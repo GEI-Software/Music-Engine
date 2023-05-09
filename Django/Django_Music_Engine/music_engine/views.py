@@ -241,8 +241,8 @@ def disponibilidad_tecnico(request, year, month, day):
     horas = []
     for i in range(0, 24, 2):
         try:
-            hours_record = HoursRecord.objects.get(date=date_obj, technician=request.user, hours=i)
-            horas.append({'hour': i, 'available': hours_record.available, 'record_id': hours_record.id})
+            disponibility = Disponibility.objects.get(date=date_obj, technician=request.user)
+            horas.append({'hour': i, 'available': disponibility.available, 'record_id': disponibility.id})
         except HoursRecord.DoesNotExist:
             horas.append({'hour': i, 'available': True, 'record_id': None})
     if request.method == 'POST':
@@ -250,7 +250,7 @@ def disponibilidad_tecnico(request, year, month, day):
             record_id = hora['record_id']
             available = request.POST.get(str(record_id))
             if available is not None:
-                hours_record = HoursRecord.objects.get(id=record_id)
-                hours_record.available = available == 'on'
-                hours_record.save()
+                disponibility = Disponibility.objects.get(id=record_id)
+                disponibility.available = available == 'on'
+                disponibility.save()
     return render(request, 'disponibilidad_tecnico.html', {'date_obj': date_obj, 'horas': horas})
