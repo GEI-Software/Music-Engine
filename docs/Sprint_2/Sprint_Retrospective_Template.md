@@ -10,19 +10,19 @@
 
 | Team Member | Issue Found                                                            |  
 |-------------|------------------------------------------------------------------------|
-| Ibrahim       | -Ha agut un problema en la execució del sprint que per falta de temps no s'ha pogut implementar correctament tots el requeriments|
-| Zihan,Theo              | -Hem pogut extreure la majoria dels requeriments requerits per el client, però ens ha faltat millorar la llista de maetrial i afegir la funcionalitat                    per afegir i editar assignacions, material, personal tècnic i sales. |
-| Pau            | - El requeriment de automatització de assignacions despres d'haver fet una petició era una opció que tenia mol mes cost de l'esperat per això no s'ha implementat|   
+| Ibrahim       | Degut a la gran quantitat de requeriments a implementar no s'han pogut implementar tots els requeriments del product backlog, però sí que s'ha pogut realitzar tot el de sprint backlog i 'issues' referents al retrospective del sprint 1 |
+| Zihan,Theo              | -Hem pogut extreure la majoria dels requeriments requerits per el comercial i tècnic, però ens farà falta corregir elements referents a les dades financeres, les hores treballades i la disponibilitat dels tècnics |
+| Pau            | Tot el referent a la automatització d'accions per part del sistema s'ha decidit descartar, ja que s'ha considerat que implicava un cost massa elevat |   
 
 
 ## Restrospective Actions
 
 | Action   | Description                                                 |  
 |----------|-------------------------------------------------------------|
-| Action 1 | Al apartat de sales cal afegir la funcionalitat de afegir,borrar i editar sales  |   
-| Action 2 | Al apartat de assignacions s'afegirà la funcionalitat de afegir i editar assiganacions del personal tècnic |  
-| Action 3 | Al apartat de reserves ens te que sortir el estat de la reserva|
-| Action 4 | Al apartat de material s'afegira un apartat per afegir material|
+| Action 1 | Les dades financeres no poden ser eliminades permanentment, s'han d'enviar a una paperera o marcar com a invàlides |   
+| Action 2 | El comercial no cal que vegi la columna de options en les hores treballades, ja que no les pot eliminar ni editar |  
+| Action 3 | S'ha d'arreglar la secció de disponibilitat per tal que el tècnic la pugui introduir correctament |
+| Action 4 | Les característiques del tècnic han de ser visibles |
 
 ## Next Sprint Team Organization
 
