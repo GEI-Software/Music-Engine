@@ -19,6 +19,7 @@ from django.urls import path, include
 from music_engine.views import *
 from music_engine.forms import *
 
+
 urlpatterns = [
     path('', home, name='home'),
     path('admin/', admin.site.urls),
@@ -33,6 +34,7 @@ urlpatterns = [
          name='studio_edit'),
     path('reserves/', ReservaListView.as_view(), name='reserva_list'),
     path('llista-tecnics/', LlistaTecnics.as_view(), name='llista_tecnics'),
+    path('caracteristiques/',CharacteristicTechinicalPersonview.as_view(),name='characteristic_technical'),
     path("create/studio/", StudioCreate.as_view()),
     path('studio/<str:pk>/delete/', StudioDelete.as_view(), name='studio_delete'),
     path("create/material/", MaterialCreate.as_view()),
@@ -49,5 +51,6 @@ urlpatterns = [
     path('dades/create/', ReceipCreateView.as_view(), name='financial_data_create'), #Check view
     path('dades/<int:pk>/update/', ReceipUpdateView.as_view(), name='financial_data_update'),
     path('dades/<int:pk>/delete/', ReceipDelateView.as_view(), name='financial_data_delete'),
-
+    path('calendario/', calendario_tecnico , name='calendario'),
+    path('disponibilidad/<int:year>/<int:month>/<int:day>/', disponibilidad_tecnico, name='disponibilidad'),
 ]

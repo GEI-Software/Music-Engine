@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Disponibilidad Técnico</title>
+  </head>
+  <body>
+    <h1>Disponibilidad Técnico {{ request.user.username }}</h1>
+    <h2>Fecha: {{ date_obj|date:"d/m/Y" }}</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <table>
+        <thead>
+          <tr>
+            <th>Hora</th>
+            <th>Disponibilidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for hora in horas %}
+            <tr>
+              <td>{{ hora.hour }}:00 - {{ hora.hour|add:2 }}:00</td>
+
+              <td>
+                <input type="checkbox" name="{{ hora.record_id }}" {% if hora.available %}checked{% endif %}>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      <input type="submit" value="Guardar">
+    </form>
+  </body>
+</html>
+
+

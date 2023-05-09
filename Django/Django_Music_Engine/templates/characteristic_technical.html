@@ -1,0 +1,35 @@
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+        <thead>
+        <tr>
+            <th>Nom</th>
+            <th>Cognom</th>
+            <th>Especialitat</th>
+            <th>Experiencia</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for tecnico in tecnic %}
+            <tr>
+                <td>{{ tecnico.name }}</td>
+                <td>{{ tecnico.last_name }}</td>
+                <td>{{ tecnico.specialty }}</td>
+                <td>{{ tecnico.experience }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="4">No hi ha personals tècnics.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

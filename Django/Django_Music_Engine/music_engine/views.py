@@ -6,7 +6,11 @@ from django.utils import timezone
 from .models import *
 from django.views.generic import ListView, UpdateView, CreateView, DeleteView, DetailView
 from .forms import *
-
+from datetime import datetime, timedelta
+from datetime import date, timedelta
+from django.shortcuts import render
+from django.urls import reverse
+from django.shortcuts import render
 
 def studio_detail(request, pk):
     studio = get_object_or_404(MusicalStudio, pk=pk)
@@ -69,6 +73,11 @@ class ReservaListView(ListView):
 class LlistaTecnics(ListView):
     model = technical_personnel
     template_name = 'detall_tecnic.html'
+    context_object_name = 'tecnic'
+
+class CharacteristicTechinicalPersonview(ListView):
+    model = technical_personnel
+    template_name = 'characteristic_technical.html'
     context_object_name = 'tecnic'
 
 
@@ -191,3 +200,57 @@ class ReceipDelateView(DeleteView):
     success_url = reverse_lazy('financial_data_list')
 
 
+def calendario_tecnico(request):
+    today = date.today()
+    year = request.GET.get('year', today.year)
+    month = request.GET.get('month', today.month)
+    day = request.GET.get('day', today.day)
+    date_obj = date(year=int(year), month=int(month), day=int(day))
+    
+    month_weeks = []
+    # Calculate the first day of the current month
+    first_day = date_obj.replace(day=1)
+    # Calculate the weekday of the first day of the current month
+    first_weekday = first_day.weekday()
+    # Calculate the number of days in the current month
+    days_in_month = (date_obj.replace(day=28) + timedelta(days=4)).replace(day=1) - timedelta(days=1)
+    # Calculate the number of weeks in the current month
+    num_weeks = (first_weekday + days_in_month.day + 6) // 7
+    # Create a list of weeks, where each week is a list of days
+    for week in range(num_weeks):
+        week_days = []
+        for weekday in range(7):
+            day_number = week * 7 + weekday - first_weekday + 1
+            if day_number < 1 or day_number > days_in_month.day:
+                week_days.append((None, None))
+            else:
+                day = date_obj.replace(day=day_number)
+                url = url = reverse('disponibilidad', args=[day.year, day.month, day.day])
+
+                week_days.append((day_number, url))
+        month_weeks.append(week_days)
+    
+    return render(request, 'calendario_tecnico.html', {
+        'date_obj': date_obj,
+        'month_weeks': month_weeks,
+    })
+
+
+def disponibilidad_tecnico(request, year, month, day):
+    date_obj = date(year=int(year), month=int(month), day=int(day))
+    horas = []
+    for i in range(0, 24, 2):
+        try:
+            hours_record = HoursRecord.objects.get(date=date_obj, technician=request.user, hours=i)
+            horas.append({'hour': i, 'available': hours_record.available, 'record_id': hours_record.id})
+        except HoursRecord.DoesNotExist:
+            horas.append({'hour': i, 'available': True, 'record_id': None})
+    if request.method == 'POST':
+        for hora in horas:
+            record_id = hora['record_id']
+            available = request.POST.get(str(record_id))
+            if available is not None:
+                hours_record = HoursRecord.objects.get(id=record_id)
+                hours_record.available = available == 'on'
+                hours_record.save()
+    return render(request, 'disponibilidad_tecnico.html', {'date_obj': date_obj, 'horas': horas})
