@@ -16,8 +16,6 @@ class MusicalMaterial(models.Model):
                     ('amplificador', 'AMPLIFICADOR'))
     type = models.CharField(choices=TYPE_CHOICES, max_length=100)
 
-
-
     def __str__(self):
         return self.name
 
@@ -50,10 +48,13 @@ class technical_personnel(models.Model):
     dni = models.CharField(max_length=30)
     name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
+    specialty = models.CharField(max_length=50, default='none')
+    experience = models.IntegerField(default=0, blank=True, null=True)
 
     def __str__(self):
         return f"{self.name} {self.last_name}"
-    
+
+
 class Assignment(models.Model):
     studio = models.ForeignKey(MusicalStudio, on_delete=models.CASCADE)
     material = models.ForeignKey(MusicalMaterial, on_delete=models.CASCADE)
@@ -65,20 +66,21 @@ class Assignment(models.Model):
 
 
 class HoursRecord(models.Model):
-    date = models.DateField(primary_key=True, default=date.today)
+    id = models.IntegerField(primary_key=True, auto_created=True)
+    date = models.DateField(default=date.today)
     hours = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(8)], default=0)
     technician = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class Receip(models.Model):
     name = models.CharField(max_length=100)
-    #name = models.ForeignKey(Assignment,on_delete=models.CASCADE)
+    # name = models.ForeignKey(Assignment,on_delete=models.CASCADE)
     data = models.DateField(_("Date"), default=date.today)
     subject = models.CharField(max_length=50)
     cost = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
-        return  f"Receip:{self.name} {self.data} {self.subject} {self.cost}"
+        return f"Receip:{self.name} {self.data} {self.subject} {self.cost}"
 
     def url_route(self):
         return reverse('financial_data', args=[str(self.name)])
@@ -88,5 +90,19 @@ class Receip2(models.Model):
     pass
 
 
+class Client(models.Model):
+    nom = models.CharField(max_length=100)
+    cognom = models.CharField(max_length=100)
+    correo_electronico = models.EmailField()
+
+    def __str__(self):
+        return f"{self.nom} {self.cognom}"
 
 
+class Comercial(models.Model):
+    name = models.CharField(max_length=50)
+    cognom = models.CharField(max_length=50)
+    email = models.EmailField()
+
+    def __str__(self):
+        return f"{self.nom} {self.cognom}"

@@ -8,5 +8,26 @@
       <jdbc-url>jdbc:sqlite:C:\Users\paute\OneDrive\Escriptori\geiade\4t\2n quatri\Models de Procés\Music-Engine\Django\Django_Music_Engine\db.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="db(1)" uuid="2b564f3d-abd0-47ef-ae4d-883ab85029b7">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\paute\OneDrive\Escriptori\geiade\4t\2n quatri\Models de Procés\Music-Engine\Django\Django_Music_Engine\db(1).sqlite3</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <libraries>
+        <library>
+          <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.40.1/org/xerial/sqlite-jdbc/3.40.1.0/sqlite-jdbc-3.40.1.0.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Django default" uuid="3e4692d6-8199-4aac-b3ce-a3b67f92148c">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/Django_Music_Engine/settings.py</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\paute\OneDrive\Escriptori\geiade\4t\2n quatri\Models de Procés\Music-Engine\Django\Django_Music_Engine\db.sqlite3</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
