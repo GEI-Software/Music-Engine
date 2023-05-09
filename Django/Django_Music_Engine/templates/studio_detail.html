@@ -1,9 +1,22 @@
 {% include 'navbar.html' %}
+{% load static %}
 {% block content %}
+<img src="{% static 'images/sala1.png' %}" style="position: absolute; top: 150px; right: 100px;">
 
-<h1>{{ studio.name }}</h1>
-<p>Capacitat: {{ studio.capacity }}</p>
-<p>Tipus: {{ studio.type }}</p>
-<p>Material incorporat: {{ studio.incorporated_material }}</p>
-    <p>(<a class="edit-button" href="{% url 'studio_edit' studio.name %}">edit</a>)</p>
+<h1>&nbsp {{ studio.name }}</h1>
+&nbsp
+<p>&nbsp Capacitat: {{ studio.capacity }}</p>
+<p>&nbsp Tipus: {{ studio.type }}</p>
+<p>&nbsp Material incorporat:</p>
+<ul>
+{% for material in studio.incorporated_material.all %}
+    <li>&nbsp &nbsp {{ material }}</li>
+{% endfor %}
+&nbsp
+</ul>
+    <p>&nbsp (<a class="edit-button" href="{% url 'studio_edit' studio.name %}">edit studio</a>)</p>
+    &nbsp
+    <a class="cta" href="{% url 'studio_delete' studio.name %}">
+        &nbsp <button class="button-delete">Delete</button>
+    </a>
 {% endblock %}

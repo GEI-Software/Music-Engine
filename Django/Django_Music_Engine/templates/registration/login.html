@@ -1,31 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!---<title>AdminLTE 3 | Log in</title> --->
+  <link href="{% static 'css/login.css' %}" rel="stylesheet">
 
-{% block content %}
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
-{% if next %}
- {% if user.is_authenticated %}
- <p>Your account doesn't have access to this page. To proceed,
- please login with an account that has access.</p>
- {% else %}
- <p>Please login to see this page.</p>
- {% endif %}
-{% endif %}
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-<div>
- <td>{{ form.username.label_tag }}</td>
- <td>{{ form.username }}</td>
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+
+    <div class="text-center">
+        <samp class="fas fa-book" height="90" alt="Logo music engine"></samp>
+    <h2>MUSIC ENGINE SYSTEM</h2>
+    </div>
+  <div>
+      <div class="login-box"><p class="login-box-msg">Logger per iniciar sessió a Music Engine System</p></div>
+      <br/>
+      <form action="#" method="post">
+        {% csrf_token %}
+        <div>
+          <input type="text" name="username" autofocus="" autocapitalize="none" autocomplete="username" maxlength="150" required="" id="id_username">
+            <p>Usuari</p>
+          <div class="input-group-append">
+            <div class="input-group-text">
+                <samp class="fas fa-user"></samp>
+            </div>
+          </div>
+        </div>
+        <br/>
+        <div class="input-group mb-3">
+          <input type="password" name="password" autocomplete="current-password" required="" id="id_password">
+            <p>Contrasenya</p>
+          <div class="input-group-append">
+            <div class="input-group-text">
+                <samp class="fas fa-lock"></samp>
+            </div>
+          </div>
+        </div>
+        <br/>
+        <div class="row">
+          <div class="col-8">
+            <p class="mb-1">
+                <a href="{%  url 'password_reset' %}">He oblidat la contrasenya.</a>
+              </p>
+              <p class="mb-0">
+                <a href="{% url 'login' %}" class="text-center">Registrar-se</a>
+              </p>
+          </div>
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+          </div>
+        </div>
+      </form>
+  </div>
 </div>
-<div>
- <td>{{ form.password.label_tag }}</td>
- <td>{{ form.password }}</td>
-</div>
-<div>
- <input type="submit" value="login" />
- <input type="hidden" name="next" value="{{ next }}" />
-</div>
-</form>
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-{% endblock %}
+</body>
+</html>

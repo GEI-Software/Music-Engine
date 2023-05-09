@@ -1,0 +1,19 @@
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <h2>Eliminar factura</h2>
+  <p>¿Estas segur de que vols eliminar la factura "{{ factura }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Sí, eliminar</button>
+    <a href="{% url 'financial_data_list' %}">No, tonar a la lista de facturas</a>
+  </form>
+</body>
+</html>
+
+<

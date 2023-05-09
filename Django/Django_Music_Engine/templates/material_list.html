@@ -7,12 +7,17 @@
 </head>
 <body>
 {% if user.is_authenticated %}
-    <h1>Material's list</h1>
+    <h1>&nbsp Material's list</h1>
+    &nbsp
         <ul>
             {% for material in materials %}
-                <li><a href="{% url 'material_detail' material.name %}">{{ material.name }}</a></li>
+                <li>&nbsp <a href="{% url 'material_detail' material.name %}">{{ material.name }}</a></li>
             {% endfor %}
         </ul>
+    &nbsp
+    <a class="cta" href="/create/material/">
+    &nbsp<button class="button">Create New Material</button>
+</a>
 {% endif %}
 
 </body>

@@ -12,3 +12,9 @@ class MaterialForm(forms.ModelForm):
     class Meta:
         model = MusicalMaterial
         fields = ['name', 'type']
+
+
+class HourRecordForm(forms.ModelForm):
+    class Meta:
+        model = HoursRecord
+        fields = ['date', 'hours', 'technician']

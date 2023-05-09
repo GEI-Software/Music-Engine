@@ -1,7 +1,14 @@
 {% include 'navbar.html' %}
 {% block content %}
 
-<h1>{{ material.name }}</h1>
-<p>Tipus: {{ material.type }}</p>
+<h1>&nbsp {{ material.name }}</h1>
+&nbsp
+<p>&nbsp Tipus: {{ material.type }}</p>
+
+<p>&nbsp (<a class="edit-button" href="{% url 'material_edit' material.name %}">edit material</a>)</p>
+&nbsp
+<a class="cta" href="{% url 'material_delete' material.name %}">
+    &nbsp <button class="button-delete">Delete</button>
+</a>
 
 {% endblock %}
