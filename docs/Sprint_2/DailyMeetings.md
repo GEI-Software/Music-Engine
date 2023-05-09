@@ -207,15 +207,13 @@ I: Information
 ## Problems/Difficulties
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
-| Sprint review | Meeting per el sprint review | Zihan, Theo, Ibra, Pau | Elaboració document Sprint Review |
-| Sprint retrospective | Meeting per el sprint retrospective | Theo, Pau | Elaboració document Sprint Retrospective |
+| Error en guardar l'hora disponible del tècnic | Implementació User Stories 2.1 | Zihan, Theo, Ibra, Pau | Elaboració User Stories 2.1 |
 
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Sprint Review: AutoAvaluació | Zihan, Theo, Ibra, Pau | 09-05-2023|
-| T | Sprint Retrospective | Zihan, Theo, Ibra, Pau | 09-05-2023|
+| T | Correció dels models per guardar l'hora disponible | Zihan, Theo, Ibra, Pau | 09-05-2023|
 
 T: Task
 D: Decision
