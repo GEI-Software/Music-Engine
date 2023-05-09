@@ -1,4 +1,4 @@
-# Sprint Retrospective(Iteracion gestor de recursos) (11-04-2023)
+# Sprint Retrospective(Iteració comercial i tècnic) (09-05-2023)
 
 | Assistant | Role             |  
 |-----------|------------------|
