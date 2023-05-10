@@ -10,8 +10,7 @@
 ## Spring Planing Overview
 
 *Here you need to include a picture of the Spring Planning in the model Kanban*
-![image](https://user-images.githubusercontent.com/73642702/226584904-989619c8-7f3e-4eb5-bb66-a7cef09e299c.png)
-
+![image](https://github.com/GEI-Software/Music-Engine/assets/73642702/b8045141-f75a-42ad-be3d-8418125c0f34)
 
 Considering the proposed distribution in the model Kanban, the overall activities to be performed by the team are: 
 
