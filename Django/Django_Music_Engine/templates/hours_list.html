@@ -4,10 +4,16 @@
 <table>
     <thead>
     <tr>
-        <th>Dia</th>
-        <th>Hores Treballades</th>
-        <th>Tècnic</th>
-        <th>Options</th>
+        {% if user.username != 'comercial' %}
+            <th>Dia</th>
+            <th>Hores Treballades</th>
+            <th>Tècnic</th>
+            <th>Options</th>
+        {% else %}
+            <th>Dia</th>
+            <th>Hores Treballades</th>
+            <th>Tècnic</th>
+        {% endif %}
     </tr>
     </thead>
     <tbody>

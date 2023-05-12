@@ -105,7 +105,7 @@ class Comercial(models.Model):
     email = models.EmailField()
 
     def __str__(self):
-        return f"{self.nom} {self.cognom}"
+        return f"{self.name} {self.cognom}"
 
 
 class Disponibility(models.Model):
