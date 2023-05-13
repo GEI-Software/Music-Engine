@@ -12,8 +12,8 @@
         {% for tecnico in tecnic %}
             <tr>
                 <td>{{ tecnico.dni }}</td>
-                <td>{{ tecnico.name }}</td>
-                <td>{{ tecnico.last_name }}</td>
+                <td>{{ tecnico.user.first_name }}</td>
+                <td>{{ tecnico.user.last_name }}</td>
             </tr>
         {% empty %}
             <tr>

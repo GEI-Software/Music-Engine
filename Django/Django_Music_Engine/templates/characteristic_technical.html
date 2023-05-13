@@ -18,8 +18,8 @@
         <tbody>
         {% for tecnico in tecnic %}
             <tr>
-                <td>{{ tecnico.name }}</td>
-                <td>{{ tecnico.last_name }}</td>
+                <td>{{ tecnico.user.first_name }}</td>
+                <td>{{ tecnico.user.last_name }}</td>
                 <td>{{ tecnico.specialty }}</td>
                 <td>{{ tecnico.experience }}</td>
             </tr>

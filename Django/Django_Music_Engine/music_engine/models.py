@@ -35,24 +35,27 @@ class MusicalStudio(models.Model):
         return self.name
 
 
-class Reserva(models.Model):
-    usuari = models.ForeignKey(User, on_delete=models.CASCADE)
-    sala = models.ForeignKey(MusicalStudio, on_delete=models.CASCADE)
-    data = models.DateField()
-    hora_inici = models.TimeField()
-    hora_fi = models.TimeField()
-    reservat = models.BooleanField(default=False)
-
-
 class technical_personnel(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     dni = models.CharField(max_length=30)
-    name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    #name = user.first_name
+    #last_name = user.last_name
     specialty = models.CharField(max_length=50, default='none')
     experience = models.IntegerField(default=0, blank=True, null=True)
 
-    def __str__(self):
-        return f"{self.name} {self.last_name}"
+    #def __str__(self):
+    #    return f"{self.name} {self.last_name}"
+
+
+class Reserva(models.Model):
+    usuari = models.ForeignKey(User, on_delete=models.CASCADE, blank=False)
+    sala = models.ForeignKey(MusicalStudio, on_delete=models.CASCADE, blank=False)
+    material = models.ManyToManyField(MusicalMaterial, blank=True)
+    tecnic = models.ForeignKey(technical_personnel, on_delete=models.CASCADE, blank=True, null=True)
+    data = models.DateField(blank=False)
+    hora_inici = models.TimeField(blank=False)
+    hora_fi = models.TimeField(blank=False)
+    reservat = models.BooleanField(default=False)
 
 
 class Assignment(models.Model):
@@ -76,7 +79,7 @@ class Receip(models.Model):
     name = models.CharField(max_length=100)
     # name = models.ForeignKey(Assignment,on_delete=models.CASCADE)
     data = models.DateField(_("Date"), default=date.today)
-    subject = models.CharField(max_length=50)
+    subject = models.ForeignKey(Reserva, on_delete=models.CASCADE)
     cost = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
