@@ -84,6 +84,7 @@ target/
 *.pyc
 __pycache__/
 local_settings.py
+Django/Django_Music_Engine/music_engine/migrations
 
 .env
-db.sqlite3
+
