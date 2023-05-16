@@ -18,7 +18,7 @@
         <tr>
           <td>{{ r.name }}</td>
           <td>{{ r.data }}</td>
-          <td>{{ r.subject }}</td>
+          <td><a href="{% url 'reserva_detail' r.subject.pk %}">{{ r.subject }}</a></td>
           <td>{{ r.cost }}</td>
           <td>
               <ul>

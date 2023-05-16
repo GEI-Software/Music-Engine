@@ -57,6 +57,18 @@ class Reserva(models.Model):
     hora_fi = models.TimeField(blank=False)
     reservat = models.BooleanField(default=False)
 
+    def save(self, *args, **kwargs):
+        if not self.usuari_id:
+            self.usuari = self._default_user()
+        super().save(*args, **kwargs)
+
+    def _default_user(self):
+        # Access the current user using the request object
+        # You need to pass the request object to the save() method
+        # For example, if you're calling save() from a view, pass the request object like this:
+        # reserva.save(request=request)
+        return self.request.user
+
 
 class Assignment(models.Model):
     studio = models.ForeignKey(MusicalStudio, on_delete=models.CASCADE)

@@ -33,6 +33,8 @@ urlpatterns = [
          StudioUpdate.as_view(model=MusicalStudio, form_class=StudioForm),
          name='studio_edit'),
     path('reserves/', ReservaListView.as_view(), name='reserva_list'),
+    path('reserves/<int:pk>/', reserva_detail, name='reserva_detail'),
+    path("create/reserva/", ReservaCreate.as_view()),
     path('llista-tecnics/', LlistaTecnics.as_view(), name='llista_tecnics'),
     path('caracteristiques/',CharacteristicTechinicalPersonview.as_view(),name='characteristic_technical'),
     path("create/studio/", StudioCreate.as_view()),

@@ -18,3 +18,9 @@ class HourRecordForm(forms.ModelForm):
     class Meta:
         model = HoursRecord
         fields = ['date', 'hours', 'technician']
+
+
+class ReservaForm(forms.ModelForm):
+    class Meta:
+        model = Reserva
+        fields = ['sala', 'material', 'tecnic', 'data', 'hora_inici', 'hora_fi', 'reservat']

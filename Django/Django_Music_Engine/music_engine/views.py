@@ -28,6 +28,11 @@ def material_detail(request, pk):
     return render(request, 'material_detail.html', {'material': material})
 
 
+def reserva_detail(request, pk):
+    reserva = get_object_or_404(Reserva, pk=pk)
+    return render(request, 'reserva_detail.html', {'reserva': reserva})
+
+
 class MaterialListView(ListView):
     model = MusicalMaterial
     template_name = 'material_list.html'
@@ -254,3 +259,16 @@ def disponibilidad_tecnico(request, year, month, day):
                 disponibility.available = available == 'on'
                 disponibility.save()
     return render(request, 'disponibilidad_tecnico.html', {'date_obj': date_obj, 'horas': horas})
+
+
+class ReservaCreate(LoginRequiredMixin, CreateView):
+    model = Reserva
+    template_name = 'reserva_form.html'
+    form_class = ReservaForm
+
+    def form_valid(self, form):
+        form.instance.usuari = self.request.user
+        return super(ReservaCreate, self).form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('reserva_list')

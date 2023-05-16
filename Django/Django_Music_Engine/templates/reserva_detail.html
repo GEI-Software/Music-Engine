@@ -1,0 +1,14 @@
+{% include 'navbar.html' %}
+{% block content %}
+
+<h1>&nbsp Reserva: {{ reserva.id }}</h1>
+&nbsp
+<p>&nbsp Usuari: {{ reserva.usuari }}</p>
+<p>&nbsp Sala: {{ reserva.sala }}</p>
+<p>&nbsp Material: {{ reserva.material }}</p>
+<p>&nbsp Tecnic: {{ reserva.tecnic }}</p>
+<p>&nbsp Data: {{ reserva.data }}</p>
+<p>&nbsp Hora inici: {{ reserva.hora_inici }}</p>
+<p>&nbsp Hora Fi: {{ reserva.hora_fi }}</p>
+
+{% endblock %}
