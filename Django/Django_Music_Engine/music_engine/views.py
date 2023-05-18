@@ -11,7 +11,9 @@ from datetime import date, timedelta
 from django.shortcuts import render
 from django.urls import reverse
 from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from .models import Assesorament
+from .forms import AssesoramentForm
 
 def studio_detail(request, pk):
     studio = get_object_or_404(MusicalStudio, pk=pk)
@@ -282,3 +284,45 @@ class ReservaCreate(LoginRequiredMixin, CreateView):
 
 def serveis(request):
     return render(request, 'serveis.html')
+def assesorament_list(request):
+    # Obtener todos los asesoramientos del cliente actual (usuario)
+    assesoraments = Assesorament.objects.filter(client_name=request.user)
+
+    context = {
+        'assesoraments': assesoraments
+    }
+    return render(request, 'assesorament_list.html', context)
+
+def create_assesorament(request):
+    if request.method == 'POST':
+        form = AssesoramentForm(request.POST)
+        if form.is_valid():
+            assesorament = form.save(commit=False)
+            assesorament.client_name = request.user
+            assesorament.save()
+            return redirect('assesorament_list')
+    else:
+        form = AssesoramentForm()
+    
+    context = {
+        'form': form
+    }
+    return render(request, 'create_assesorament.html', context)
+
+def edit_assesorament(request, assesorament_id):
+    assesorament = Assesorament.objects.get(pk=assesorament_id)
+    
+    if request.method == 'POST':
+        form = AssesoramentForm(request.POST, instance=assesorament)
+        if form.is_valid():
+            form.save()
+            return redirect('assesorament_list')
+    else:
+        form = AssesoramentForm(instance=assesorament)
+    
+    context = {
+        'form': form,
+        'assesorament': assesorament
+    }
+    return render(request, 'edit_assesorament.html', context)
+    

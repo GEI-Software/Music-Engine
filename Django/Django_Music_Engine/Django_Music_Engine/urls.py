@@ -56,4 +56,7 @@ urlpatterns = [
     path('calendario/', calendario_tecnico , name='calendario'),
     path('disponibilidad/<int:year>/<int:month>/<int:day>/', disponibilidad_tecnico, name='disponibilidad'),
     path('serveis/', serveis, name='serveis'),
+    path('assesoraments/', assesorament_list, name='assesorament_list'),
+    path('assesoraments/create/', create_assesorament, name='create_assesorament'),
+    path('assesoraments/edit/<int:assesorament_id>/', edit_assesorament, name='edit_assesorament'),
 ]

@@ -24,3 +24,9 @@ class ReservaForm(forms.ModelForm):
     class Meta:
         model = Reserva
         fields = ['sala', 'material', 'tecnic', 'data', 'hora_inici', 'hora_fi', 'reservat']
+
+
+class AssesoramentForm(forms.ModelForm):
+    class Meta:
+        model = Assesorament
+        fields = ('date', 'telephone', 'client_name', 'motive')

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Asesoramientos</title>
+</head>
+<body>
+    <h1>Lista de Asesoramientos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Teléfono</th>
+                <th>Nombre del Cliente</th>
+                <th>Motivo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for assesorament in assesoraments %}
+                <tr>
+                    <td>{{ assesorament.id }}</td>
+                    <td>{{ assesorament.date }}</td>
+                    <td>{{ assesorament.telephone }}</td>
+                    <td>{{ assesorament.client_name }}</td>
+                    <td>{{ assesorament.motive }}</td>
+                    <td>
+                        <a href="{% url 'edit_assesorament' assesorament.id %}">Editar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'create_assesorament' %}">Crear Nuevo Asesoramiento</a>
+</body>
+</html>
