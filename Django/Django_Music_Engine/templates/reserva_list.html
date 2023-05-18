@@ -22,7 +22,7 @@
                     <td>{{ reserva.data }}</td>
                     <td>{{ reserva.hora_inici }}</td>
                     <td>{{ reserva.hora_fi }}</td>
-                    <td>{{ reserva.reservat }}</td>
+                    <td>{{ reserva.reservat }} <button id="toggle-button" data-id="{{ reserva.id }}">Canviar Estat Reserva</button> </td>
                 </tr>
             {% endif %}
         {% else %}
@@ -41,4 +41,31 @@
 &nbsp<a class="cta" href="/create/reserva/">
     &nbsp<button class="button">Nova Reserva</button>
     </a>
+
+
+<script>
+    document.getElementById("toggle-button").addEventListener("click", function() {
+        var objectId = this.getAttribute("data-id");
+        var url = "/toggle-state/" + objectId + "/";
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url);
+        xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    // La sol·licitud s'ha completat correctament
+                    console.log(xhr.responseText);
+                    location.reload();
+                } else {
+                    // Ha ocorregut un error
+                    console.error(xhr.responseText);
+                }
+            }
+        };
+        xhr.send();
+    });
+</script>
+
+
 </body>

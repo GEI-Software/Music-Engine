@@ -56,4 +56,5 @@ urlpatterns = [
     path('calendario/', calendario_tecnico , name='calendario'),
     path('disponibilidad/<int:year>/<int:month>/<int:day>/', disponibilidad_tecnico, name='disponibilidad'),
     path('serveis/', serveis, name='serveis'),
+    path("toggle-state/<int:pk>/", toggle_state, name="toggle_state"),
 ]
