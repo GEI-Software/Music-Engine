@@ -1,5 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
+from django.http import JsonResponse, HttpRequest
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.utils import timezone
@@ -284,6 +285,7 @@ class ReservaCreate(LoginRequiredMixin, CreateView):
 
 def serveis(request):
     return render(request, 'serveis.html')
+
 def assesorament_list(request):
     # Obtener todos los asesoramientos del cliente actual (usuario)
     assesoraments = Assesorament.objects.filter(client_name=request.user)
@@ -325,4 +327,16 @@ def edit_assesorament(request, assesorament_id):
         'assesorament': assesorament
     }
     return render(request, 'edit_assesorament.html', context)
+  
+def toggle_state(request, pk):
+    if request.method == "POST":
+        obj = Reserva.objects.get(pk=pk)
+
+        obj.reservat = not obj.reservat
+        obj.save()
+
+        return JsonResponse({"success": True})
+    else:
+        return JsonResponse({"success": False})
     
+

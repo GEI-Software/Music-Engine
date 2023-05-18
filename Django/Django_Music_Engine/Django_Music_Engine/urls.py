@@ -59,4 +59,6 @@ urlpatterns = [
     path('assesoraments/', assesorament_list, name='assesorament_list'),
     path('assesoraments/create/', create_assesorament, name='create_assesorament'),
     path('assesoraments/edit/<int:assesorament_id>/', edit_assesorament, name='edit_assesorament'),
+  path("toggle-state/<int:pk>/", toggle_state, name="toggle_state"),
+
 ]
