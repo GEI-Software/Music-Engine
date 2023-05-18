@@ -14,14 +14,27 @@
     </thead>
     <tbody>
     {% for reserva in reserves %}
-        <tr>
-            <td>{{ reserva.usuari }}</td>
-            <td>{{ reserva.sala }}</td>
-            <td>{{ reserva.data }}</td>
-            <td>{{ reserva.hora_inici }}</td>
-            <td>{{ reserva.hora_fi }}</td>
-            <td>{{ reserva.reservat }}</td>
-        </tr>
+        {% if user.username != "gestor" %}
+            {% if reserva.usuari == user %}
+                <tr>
+                    <td>{{ reserva.usuari }}</td>
+                    <td>{{ reserva.sala }}</td>
+                    <td>{{ reserva.data }}</td>
+                    <td>{{ reserva.hora_inici }}</td>
+                    <td>{{ reserva.hora_fi }}</td>
+                    <td>{{ reserva.reservat }}</td>
+                </tr>
+            {% endif %}
+        {% else %}
+            <tr>
+                <td>{{ reserva.usuari }}</td>
+                <td>{{ reserva.sala }}</td>
+                <td>{{ reserva.data }}</td>
+                <td>{{ reserva.hora_inici }}</td>
+                <td>{{ reserva.hora_fi }}</td>
+                <td>{{ reserva.reservat }}</td>
+            </tr>
+        {% endif %}
     {% endfor %}
     </tbody>
 </table>

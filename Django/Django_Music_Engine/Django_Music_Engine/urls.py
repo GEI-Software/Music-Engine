@@ -55,4 +55,5 @@ urlpatterns = [
     path('dades/<int:pk>/delete/', ReceipDelateView.as_view(), name='financial_data_delete'),
     path('calendario/', calendario_tecnico , name='calendario'),
     path('disponibilidad/<int:year>/<int:month>/<int:day>/', disponibilidad_tecnico, name='disponibilidad'),
+    path('serveis/', serveis, name='serveis'),
 ]

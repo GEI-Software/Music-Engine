@@ -15,6 +15,7 @@ class MusicalMaterial(models.Model):
                     ('vent', 'VENT'),
                     ('amplificador', 'AMPLIFICADOR'))
     type = models.CharField(choices=TYPE_CHOICES, max_length=100)
+    price = models.IntegerField()
 
     def __str__(self):
         return self.name
@@ -101,8 +102,8 @@ class Receip(models.Model):
         return reverse('financial_data', args=[str(self.name)])
 
 
-class Receip2(models.Model):
-    pass
+#class Receip2(models.Model):
+ #   pass
 
 
 class Client(models.Model):

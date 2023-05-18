@@ -12,6 +12,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.shortcuts import render
 
+
 def studio_detail(request, pk):
     studio = get_object_or_404(MusicalStudio, pk=pk)
     return render(request, 'studio_detail.html', {'studio': studio})
@@ -79,6 +80,7 @@ class LlistaTecnics(ListView):
     model = technical_personnel
     template_name = 'detall_tecnic.html'
     context_object_name = 'tecnic'
+
 
 class CharacteristicTechinicalPersonview(ListView):
     model = technical_personnel
@@ -174,10 +176,12 @@ class ReceipListView(ListView):
     template_name = 'finance/financial_data_list.html'
     context_object_name = 'factures'
 
-class ReceipDetailView(DetailView): #pk auto
+
+class ReceipDetailView(DetailView):  # pk auto
     model = Receip
     template_name = 'finance/financial_data_detail.html'
     context_object_name = 'Receip'
+
 
 class ReceipCreateView(CreateView):
     model = Receip
@@ -191,6 +195,7 @@ class ReceipCreateView(CreateView):
     def get_success_url(self):
         return reverse_lazy('financial_data_list')
 
+
 class ReceipUpdateView(UpdateView):
     model = Receip
     template_name = 'finance/financial_data_form.html'
@@ -198,6 +203,7 @@ class ReceipUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse_lazy('financial_data_list')
+
 
 class ReceipDelateView(DeleteView):
     model = Receip
@@ -211,7 +217,7 @@ def calendario_tecnico(request):
     month = request.GET.get('month', today.month)
     day = request.GET.get('day', today.day)
     date_obj = date(year=int(year), month=int(month), day=int(day))
-    
+
     month_weeks = []
     # Calculate the first day of the current month
     first_day = date_obj.replace(day=1)
@@ -234,7 +240,7 @@ def calendario_tecnico(request):
 
                 week_days.append((day_number, url))
         month_weeks.append(week_days)
-    
+
     return render(request, 'calendario_tecnico.html', {
         'date_obj': date_obj,
         'month_weeks': month_weeks,
@@ -272,3 +278,7 @@ class ReservaCreate(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse_lazy('reserva_list')
+
+
+def serveis(request):
+    return render(request, 'serveis.html')

@@ -11,7 +11,7 @@ class StudioForm(forms.ModelForm):
 class MaterialForm(forms.ModelForm):
     class Meta:
         model = MusicalMaterial
-        fields = ['name', 'type']
+        fields = ['name', 'type', 'price']
 
 
 class HourRecordForm(forms.ModelForm):
