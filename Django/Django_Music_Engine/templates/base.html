@@ -24,6 +24,7 @@
                         <li>&nbsp<a href="{% url 'hours_list' %}">Hores Treballades</a></li>
                         <li>&nbsp<a href="{% url 'financial_data_list' %}">Dades financeres</a></li>
                     {% endif %}
+                    <li>&nbsp<a href="{% url 'reservation' %}">RESERVA</a></li>
                     <li>&nbsp<a href="{% url 'logout' %}">Tancar sessió</a></li>
                 {% else %}
                 <a class="cta" href="/accounts/login">

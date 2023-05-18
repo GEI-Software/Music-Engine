@@ -1,6 +1,7 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
+from django.template.context_processors import request
 from django.urls import reverse_lazy
 from django.utils import timezone
 from .models import *
@@ -174,5 +175,23 @@ class ReceipDelateView(DeleteView):
     model = Receip
     template_name = 'finance/financial_data_remove.html'
     success_url = reverse_lazy('financial_data_list')
+
+#client
+
+class ReservationClient(request):
+    if request.method == 'POST':
+        form = Reservation(request.POST)
+        if form.is_valid():
+            start_date = form.cleaned_data['start_date']
+            end_date = form.cleaned_data['end_date']
+            reservation = ReservationForm(start_date=start_date, end_date=end_date, price=price)
+            reservation.save()
+            return redirect("reservation_success")
+    else:
+        form = Reservation()
+    return render(request, "reservation_form.html", {'form': form})
+
+
+
 
 

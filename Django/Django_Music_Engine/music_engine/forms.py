@@ -18,3 +18,7 @@ class HourRecordForm(forms.ModelForm):
     class Meta:
         model = HoursRecord
         fields = ['date', 'hours', 'technician']
+
+class ReservationForm(forms.Form):
+    start_date = forms.DateField(widget=forms.DateInput(attrs={'class': 'datepicker'}))
+    end_date = forms.DateField(widget=forms.DateInput(attrs={'class': 'datepicker'}))

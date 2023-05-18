@@ -19,6 +19,8 @@ from django.urls import path, include
 from music_engine.views import *
 from music_engine.forms import *
 
+from Django.Django_Music_Engine.music_engine.views import ReservationClient
+
 urlpatterns = [
     path('', home, name='home'),
     path('admin/', admin.site.urls),
@@ -47,5 +49,9 @@ urlpatterns = [
     path('dades/create/', ReceipCreateView.as_view(), name='financial_data_create'), #Check view
     path('dades/<int:pk>/update/', ReceipUpdateView.as_view(), name='financial_data_update'),
     path('dades/<int:pk>/delete/', ReceipDelateView.as_view(), name='financial_data_delete'),
+    #client
+    path('client/',ReservationClient.as_view(), name='reservation'),
+
+    path('reservation/success/', views.reservation_success, name='reservation_success')
 
 ]
