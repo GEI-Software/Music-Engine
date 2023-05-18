@@ -130,3 +130,11 @@ class Disponibility(models.Model):
     # hours = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(8)], default=0)
     technician = models.ForeignKey(User, on_delete=models.CASCADE)
     available = models.BooleanField(default=True)
+
+class Assesorament(models.Model):
+    id = models.AutoField(primary_key=True)
+    date = models.DateField(default=date.today)
+    telephone = models.CharField(max_length=9)
+    client_name = models.CharField(max_length=255)
+    motive = models.TextField(max_length=250)
+
