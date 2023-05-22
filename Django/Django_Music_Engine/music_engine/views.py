@@ -16,6 +16,7 @@ from django.shortcuts import render, redirect
 from .models import Assesorament
 from .forms import AssesoramentForm
 
+
 def studio_detail(request, pk):
     studio = get_object_or_404(MusicalStudio, pk=pk)
     return render(request, 'studio_detail.html', {'studio': studio})
@@ -286,6 +287,7 @@ class ReservaCreate(LoginRequiredMixin, CreateView):
 def serveis(request):
     return render(request, 'serveis.html')
 
+
 def assesorament_list(request):
     # Obtener todos los asesoramientos del cliente actual (usuario)
     assesoraments = Assesorament.objects.filter(client_name=request.user)
@@ -294,6 +296,7 @@ def assesorament_list(request):
         'assesoraments': assesoraments
     }
     return render(request, 'assesorament_list.html', context)
+
 
 def create_assesorament(request):
     if request.method == 'POST':
@@ -305,15 +308,16 @@ def create_assesorament(request):
             return redirect('assesorament_list')
     else:
         form = AssesoramentForm()
-    
+
     context = {
         'form': form
     }
     return render(request, 'create_assesorament.html', context)
 
+
 def edit_assesorament(request, assesorament_id):
     assesorament = Assesorament.objects.get(pk=assesorament_id)
-    
+
     if request.method == 'POST':
         form = AssesoramentForm(request.POST, instance=assesorament)
         if form.is_valid():
@@ -321,13 +325,14 @@ def edit_assesorament(request, assesorament_id):
             return redirect('assesorament_list')
     else:
         form = AssesoramentForm(instance=assesorament)
-    
+
     context = {
         'form': form,
         'assesorament': assesorament
     }
     return render(request, 'edit_assesorament.html', context)
-  
+
+
 def toggle_state(request, pk):
     if request.method == "POST":
         obj = Reserva.objects.get(pk=pk)
@@ -338,5 +343,15 @@ def toggle_state(request, pk):
         return JsonResponse({"success": True})
     else:
         return JsonResponse({"success": False})
-    
 
+
+def toggle_state_fd(request, pk):
+    if request.method == "POST":
+        obj = Receip.objects.get(pk=pk)
+
+        obj.valid = not obj.valid
+        obj.save()
+
+        return JsonResponse({"success": True})
+    else:
+        return JsonResponse({"success": False})

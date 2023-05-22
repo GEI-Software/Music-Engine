@@ -10,6 +10,7 @@
         <th>Data</th>
         <th>Assumpte</th>
         <th>Import</th>
+        <th>Vàlida</th>
         <th>Options</th>
       </tr>
     </thead>
@@ -20,12 +21,8 @@
           <td>{{ r.data }}</td>
           <td><a href="{% url 'reserva_detail' r.subject.pk %}">{{ r.subject }}</a></td>
           <td>{{ r.cost }}</td>
-          <td>
-              <ul>
-                <li><a href="{% url 'financial_data_update' r.pk %}">Editar</a></li>
-                <li><a href="{% url 'financial_data_delete' r.pk %}">Elimiar</a></li>
-              </ul>
-          </td>
+          <td>{{ r.valid }} <button id="toggle-button" data-id="{{ r.id }}" class="button button-red">Canviar Estat Reserva</button></td>
+          <td><a href="{% url 'financial_data_update' r.pk %}">Editar</a></td>
         </tr>
       {% empty %}
         <tr>
@@ -38,4 +35,28 @@
     &nbsp<a class="cta" href="/dades/create/">
     &nbsp<button class="button button-blue">Add New Record</button>
     </a>
+
+<script>
+    document.getElementById("toggle-button").addEventListener("click", function() {
+        var objectId = this.getAttribute("data-id");
+        var url = "/toggle-state-fd/" + objectId + "/";
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url);
+        xhr.setRequestHeader("X-CSRFToken", "{{ csrf_token }}");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    // La sol·licitud s'ha completat correctament
+                    console.log(xhr.responseText);
+                    location.reload();
+                } else {
+                    // Ha ocorregut un error
+                    console.error(xhr.responseText);
+                }
+            }
+        };
+        xhr.send();
+    });
+</script>
 </body>

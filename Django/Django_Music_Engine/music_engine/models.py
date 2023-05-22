@@ -94,6 +94,7 @@ class Receip(models.Model):
     data = models.DateField(_("Date"), default=date.today)
     subject = models.ForeignKey(Reserva, on_delete=models.CASCADE)
     cost = models.DecimalField(max_digits=7, decimal_places=2)
+    valid = models.BooleanField(default=True)
 
     def __str__(self):
         return f"Receip:{self.name} {self.data} {self.subject} {self.cost}"
