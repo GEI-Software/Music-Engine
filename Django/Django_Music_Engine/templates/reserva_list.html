@@ -22,7 +22,7 @@
                     <td>{{ reserva.data }}</td>
                     <td>{{ reserva.hora_inici }}</td>
                     <td>{{ reserva.hora_fi }}</td>
-                    <td>{{ reserva.reservat }} <button id="toggle-button" data-id="{{ reserva.id }}">Canviar Estat Reserva</button> </td>
+                    <td>{{ reserva.reservat }} <button id="toggle-button" data-id="{{ reserva.id }}" class="button button-red">Canviar Estat Reserva</button></td>
                 </tr>
             {% endif %}
         {% else %}
@@ -39,7 +39,7 @@
     </tbody>
 </table>
 &nbsp<a class="cta" href="/create/reserva/">
-    &nbsp<button class="button">Nova Reserva</button>
+    &nbsp<button class="button button-blue">Nova Reserva</button>
     </a>
 
 
