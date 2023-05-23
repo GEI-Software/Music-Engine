@@ -86,16 +86,16 @@ I: Information
 
 | Problem       | Task                                   | Owner                  | Description                                              |
 |---------------|----------------------------------------|------------------------|----------------------------------------------------------|
-| Urls llistats | Implementació User Story 1.2, 1.3, 2.2 | Zihan, Theo, Ibra, Pau | Dificultats amb la pk string                             |
-| Templates     | Implementació User Story 1.2, 1.3, 2.2 | Theo, Pau              | Dificultats en els 'include/extends' dels templates html |
+| Error en el login i register | Implementació User Stories 1.1 | Theo, Pau | Problemes a l'hora d'implementar el login en Django |
+| Error en la modificació | Implementació User Stories 2.5 | Zihan, Pau | Problemes a d'implementar el edit|
 
 ## Actions
 
 | Type | Description                                              | Owner                  | Deadline   |
 |------|----------------------------------------------------------|------------------------|------------|
-| T    | Creació de sales musicals                                | Zihan, Theo, Ibra, Pau | 23-05-2023 |
-| T    | Creació de material musical                              | Zihan, Theo, Ibra, Pau | 23-05-2023 |
-| I    | Usuari gestor de recursos: gestor. Password: recursos123 | Zihan, Theo, Ibra, Pau | 23-05-2023 |
+| T    | Correció d'errors del arxiu models.py                           | Zihan, Theo, Ibra, Pau | 23-05-2023 |
+| T    | Creació de noves vistes                            | Zihan, Theo, Ibra, Pau | 23-05-2023 |
+
 
 T: Task
 D: Decision
@@ -114,6 +114,8 @@ I: Information
 | Problem                         | Task                         | Owner                  | Description                                          |
 |---------------------------------|------------------------------|------------------------|------------------------------------------------------|
 | Emmagatzemament usuaris tècnics | Implementació User Story 1.4 | Zihan, Theo, Ibra, Pau | Algunes dificultats  amb l'emmagatzemament a la BBDD |
+
+
 
 ## Actions
 
