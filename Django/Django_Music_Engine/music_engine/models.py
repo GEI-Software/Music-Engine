@@ -19,6 +19,15 @@ class MusicalMaterial(models.Model):
 
     def __str__(self):
         return self.name
+    def show_reserved_material():
+        # Obtener todos los materiales musicales que están reservados
+        reserved_materials = MusicalMaterial.objects.filter(reserved=True)
+            # Crear una lista vacía para guardar los nombres de los materiales reservados
+        reserved_names = []
+        # Recorrer los materiales reservados y añadir sus nombres a la lista
+        for material in reserved_materials:
+            reserved_names.append(material.name)
+
 
 
 class MusicalStudio(models.Model):
@@ -31,6 +40,7 @@ class MusicalStudio(models.Model):
     type = models.CharField(choices=TYPE_CHOICES, max_length=100)
 
     incorporated_material = models.ManyToManyField(MusicalMaterial, blank=True)
+    
 
     def __str__(self):
         return self.name

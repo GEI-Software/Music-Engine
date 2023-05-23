@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Materiales Disponibles</title>
+</head>
+<body>
+    <h1>Lista de Materiales Disponibles</h1>
+    <ul>
+        {% for material in materials %}
+            <li><a href="{% url 'material_detail_client' material.name %}">{{ material.name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

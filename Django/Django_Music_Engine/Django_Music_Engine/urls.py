@@ -61,5 +61,8 @@ urlpatterns = [
     path('assesoraments/edit/<int:assesorament_id>/', edit_assesorament, name='edit_assesorament'),
     path("toggle-state/<int:pk>/", toggle_state, name="toggle_state"),
     path("toggle-state-fd/<int:pk>/", toggle_state_fd, name="toggle_state_fd"),
+    path('', material_list_client, name='material_list_client'),
+    path('<str:name>/', material_detail_client, name='material_detail_client'),
+    path('<str:name>/reserve/', reserve_material, name='reserve_material')
 
 ]

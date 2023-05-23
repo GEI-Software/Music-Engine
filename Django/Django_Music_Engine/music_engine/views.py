@@ -15,7 +15,7 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .models import Assesorament
 from .forms import AssesoramentForm
-
+from django.contrib import messages
 
 def studio_detail(request, pk):
     studio = get_object_or_404(MusicalStudio, pk=pk)
@@ -355,3 +355,40 @@ def toggle_state_fd(request, pk):
         return JsonResponse({"success": True})
     else:
         return JsonResponse({"success": False})
+    
+
+def material_list_client(request):
+    # Obtener todos los materiales que no están reservados
+    materials = MusicalMaterial.objects.filter(reserved=False)
+    # Renderizar la plantilla con el contexto
+    return render(request, 'material_list_client.html', {'materials': materials})
+
+# Definir la vista para mostrar la información del material específico
+def material_detail_client(request, name):
+    # Obtener el material por su nombre o lanzar un error si no existe
+    material = get_object_or_404(MusicalMaterial, name=name)
+    # Renderizar la plantilla con el contexto
+    return render(request, 'material_detail_client.html', {'material': material})
+
+def reserve_material(request, name):
+
+    if request.method == 'POST':
+        # Obtener el material por su nombre o lanzar un error si no existe
+        material = get_object_or_404(MusicalMaterial, name=name)
+        # Comprobar que el material no esté reservado
+        if not material.reserved:
+            # Cambiar el atributo reserved a True y guardar el cambio
+            material.reserved = True
+            material.save()
+            # Mostrar un mensaje de éxito
+            messages.success(request, f'Has reservado el material {material.name}.')
+        else:
+            # Mostrar un mensaje de error
+            messages.error(request, f'El material {material.name} ya está reservado.')
+        # Redirigir a la página de detalle del material
+        return redirect('material_detail_client', name=name)
+    else:
+        # Mostrar un mensaje de error
+        messages.error(request, 'Método no permitido.')
+        # Redirigir a la página de inicio
+        return redirect('material_list_client')
