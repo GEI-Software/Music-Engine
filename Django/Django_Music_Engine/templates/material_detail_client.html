@@ -8,9 +8,5 @@
     <h1>Detalle del Material {{ material.name }}</h1>
     <p>Tipo: {{ material.type }}</p>
     <p>Precio: {{ material.price }}</p>
-    <form action="{% url 'reserve_material' material.name %}" method="POST">
-        {% csrf_token %}
-        <input type="submit" value="Reservar">
-    </form>
 </body>
 </html>

@@ -357,11 +357,11 @@ def toggle_state_fd(request, pk):
         return JsonResponse({"success": False})
     
 
-def material_list_client(request):
-    # Obtener todos los materiales que no están reservados
-    materials = MusicalMaterial.objects.filter(reserved=False)
-    # Renderizar la plantilla con el contexto
-    return render(request, 'material_list_client.html', {'materials': materials})
+    
+class MaterialListViewsClient(ListView):
+    model = MusicalMaterial
+    template_name = 'material_list_client.html'
+    context_object_name = 'materials'
 
 # Definir la vista para mostrar la información del material específico
 def material_detail_client(request, name):

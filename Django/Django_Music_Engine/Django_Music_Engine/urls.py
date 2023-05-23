@@ -61,8 +61,8 @@ urlpatterns = [
     path('assesoraments/edit/<int:assesorament_id>/', edit_assesorament, name='edit_assesorament'),
     path("toggle-state/<int:pk>/", toggle_state, name="toggle_state"),
     path("toggle-state-fd/<int:pk>/", toggle_state_fd, name="toggle_state_fd"),
-    path('', material_list_client, name='material_list_client'),
-    path('<str:name>/', material_detail_client, name='material_detail_client'),
-    path('<str:name>/reserve/', reserve_material, name='reserve_material')
+    path('material_client/', MaterialListViewsClient.as_view(), name='material_list_client'),
+    path('material_client_detail/<str:name>/', material_detail_client, name='material_detail_client'),
+    path('material_client/<str:name>/reserve/', reserve_material, name='reserve_material')
 
 ]
