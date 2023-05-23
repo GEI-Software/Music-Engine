@@ -87,4 +87,8 @@ local_settings.py
 Django/Django_Music_Engine/music_engine/migrations
 
 .env
+<<<<<<< HEAD
 
+=======
+.pyc
+>>>>>>> 30f1746bc7a846df600a83241b6c80abcb26797f
