@@ -28,6 +28,7 @@
                     {% else %}
                         <li>&nbsp<a href="{% url 'reserva_list' %}">Reserves</a></li>
                         <li>&nbsp<a href="{% url 'assesorament_list' %}">Assesorarament</a></li>
+                        <li>&nbsp<a href="{% url 'material_list_client' %}">Materiales disponibles</a></li>
                     {% endif %}
                     <li>&nbsp<a href="{% url 'logout' %}">Tancar sessió</a></li>
                 {% else %}
