@@ -1,45 +1,55 @@
+{% load static %}
 {% include 'navbar.html' %}
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}{% endblock %} - Music Engine</title>
-    </head>
-    <body>
-        <nav>
-            <ul>
-                {% if user.is_authenticated %}
-                    {% if user.username == 'gestor' %}
-                        <li>&nbsp<a href="{% url 'studio_list' %}">Llista de sales</a></li>
-                        <li>&nbsp<a href="{% url 'material_list' %}">Llista de materials</a></li>
-                        <li>&nbsp<a href="{% url 'reserva_list' %}">Reserves</a></li>
-                        <li>&nbsp<a href="{% url 'assignment_list' %}">Asignaciones o Peticiones</a></li>
-                        <li>&nbsp<a href="{% url 'llista_tecnics' %}">Personal Tècnic</a></li>
-                        &nbsp
-                    {% endif %}
-                    {% if user.username == 'tecnic' %}
-                        <li>&nbsp<a href="{% url 'assignment_list' %}">Asignaciones o Peticiones</a></li>
-                        <li>&nbsp<a href="{% url 'hours_list' %}">Hores Treballades</a></li>
-                        <li>&nbsp<a href="{% url 'characteristic_technical' %}">Caracteristiques</a></li>
-                        <li>&nbsp<a href="{% url 'calendario' %}">Disponibilitat</a></li>
-                    {% endif %}
-                    {% if user.username == 'comercial' %}
-                        <li>&nbsp<a href="{% url 'hours_list' %}">Hores Treballades</a></li>
-                        <li>&nbsp<a href="{% url 'financial_data_list' %}">Dades financeres</a></li>
-                    {% else %}
-                        <li>&nbsp<a href="{% url 'reserva_list' %}">Reserves</a></li>
-                        <li>&nbsp<a href="{% url 'assesorament_list' %}">Assesorarament</a></li>
-                        <li>&nbsp<a href="{% url 'material_list_client' %}">Materiales disponibles</a></li>
-                    {% endif %}
-                    <li>&nbsp<a href="{% url 'logout' %}">Tancar sessió</a></li>
-                {% else %}
-                <a class="cta" href="/accounts/login">
-                &nbsp<button class="button button-blue">Log In</button>
-                </a>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %} - Music Engine</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <img src="{% static 'images/logo.svg' %}" style="position: absolute; top: 300px; right: 100px; width: 200px;">
+    <nav>
+        <ul>
+            {% if user.is_authenticated %}
+                {% if user.username == 'gestor' %}
+                    <li><a href="{% url 'studio_list' %}">Llista de sales</a></li><br>
+                    <li><a href="{% url 'material_list' %}">Llista de materials</a></li><br>
+                    <li><a href="{% url 'reserva_list' %}">Reserves</a></li><br>
+                    <li><a href="{% url 'assignment_list' %}">Asignaciones o Peticiones</a></li><br>
+                    <li><a href="{% url 'llista_tecnics' %}">Personal Tècnic</a></li><br>
                 {% endif %}
-            </ul>
+                {% if user.username == 'tecnic' %}
+                    <li><a href="{% url 'assignment_list' %}">Asignaciones o Peticiones</a></li><br>
+                    <li><a href="{% url 'hours_list' %}">Hores Treballades</a></li><br>
+                    <li><a href="{% url 'characteristic_technical' %}">Caracteristiques</a></li><br>
+                    <li><a href="{% url 'calendario' %}">Disponibilitat</a></li><br>
+                {% endif %}
+                {% if user.username == 'comercial' %}
+                    <li><a href="{% url 'hours_list' %}">Hores Treballades</a></li><br>
+                    <li><a href="{% url 'financial_data_list' %}">Dades financeres</a></li><br>
+                {% endif %}
+                {% if user.username == 'client1' %}
+                    <li><a href="{% url 'reserva_list' %}">Reserves</a></li><br>
+                    <li><a href="{% url 'assesorament_list' %}">Assesorarament</a></li><br>
+                    <li><a href="{% url 'material_list_client' %}">Materiales disponibles</a></li><br>
+                {% endif %}
+                <li><a href="{% url 'logout' %}">Tancar sessió</a></li><br>
+            {% else %}
+                <li>
+                    <a class="cta" href="/accounts/login">
+                        <button class="button button-blue">Log In</button>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
 
-         </nav>
+    <div class="container">
         {% block content %}
         {% endblock %}
-    </body>
-</html>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
