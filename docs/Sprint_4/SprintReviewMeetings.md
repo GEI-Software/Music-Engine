@@ -33,5 +33,4 @@ For the conclusions we need to reflect improvement points reflected by our custo
 | Client Improvement                                  | Description                                                                                                                    |  
 |-----------------------------------------------------|---------------------------------------------------------------------------------------------------------                       |
 | Actualitzar plantilles html                         | Petita millora visual                                                                                                          |  
-| Modificar la llista de materials                    | Gestor de recursos ha de poder afegir i eliminar la llista de materials ficant el true/fals com a icono                        | 
 | Seguretat a l'hora de modificar les factures        | El agent comercial no ha de poder eliminar les factures de la base de dades sinó que marcar-lo com a borrat                    | 
