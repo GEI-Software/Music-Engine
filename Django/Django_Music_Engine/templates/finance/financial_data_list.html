@@ -21,7 +21,7 @@
           <td>{{ r.data }}</td>
           <td><a href="{% url 'reserva_detail' r.subject.pk %}">{{ r.subject }}</a></td>
           <td>{{ r.cost }}</td>
-          <td>{{ r.valid }} <button id="toggle-button" data-id="{{ r.id }}" class="button button-red">Canviar Estat Reserva</button></td>
+          <td>{{ r.valid }} <button id="toggle-button" data-id="{{ r.id }}" class="button button-red">Canviar Estat</button></td>
           <td><a href="{% url 'financial_data_update' r.pk %}">Editar</a></td>
         </tr>
       {% empty %}

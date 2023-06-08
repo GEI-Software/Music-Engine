@@ -1,9 +1,14 @@
+from random import randint
+
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import date
 from django.urls import reverse
 from django.utils.translation import gettext as _
+from django.db.models.signals import post_save
+from django.dispatch import receiver
+from . import *
 
 
 class MusicalMaterial(models.Model):
@@ -31,7 +36,6 @@ class MusicalStudio(models.Model):
     type = models.CharField(choices=TYPE_CHOICES, max_length=100)
 
     incorporated_material = models.ManyToManyField(MusicalMaterial, blank=True)
-    
 
     def __str__(self):
         return self.name
@@ -40,12 +44,12 @@ class MusicalStudio(models.Model):
 class technical_personnel(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     dni = models.CharField(max_length=30)
-    #name = user.first_name
-    #last_name = user.last_name
+    # name = user.first_name
+    # last_name = user.last_name
     specialty = models.CharField(max_length=50, default='none')
     experience = models.IntegerField(default=0, blank=True, null=True)
 
-    #def __str__(self):
+    # def __str__(self):
     #    return f"{self.name} {self.last_name}"
 
 
@@ -104,8 +108,8 @@ class Receip(models.Model):
         return reverse('financial_data', args=[str(self.name)])
 
 
-#class Receip2(models.Model):
- #   pass
+# class Receip2(models.Model):
+#   pass
 
 
 class Client(models.Model):
@@ -133,6 +137,7 @@ class Disponibility(models.Model):
     technician = models.ForeignKey(User, on_delete=models.CASCADE)
     available = models.BooleanField(default=True)
 
+
 class Assesorament(models.Model):
     id = models.AutoField(primary_key=True)
     date = models.DateField(default=date.today)
@@ -140,3 +145,12 @@ class Assesorament(models.Model):
     client_name = models.CharField(max_length=255)
     motive = models.TextField(max_length=250)
 
+
+@receiver(post_save, sender=Reserva)
+def crear_receip(sender, instance, created, **kwargs):
+    if created:
+        nom = "Reserva de " + str(instance.usuari)
+        data = instance.data
+        subject = instance
+        cost = randint(20, 40)
+        Receip.objects.create(name=nom, data=data, subject=subject, cost=cost)
