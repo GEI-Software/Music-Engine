@@ -64,14 +64,14 @@ I: Information
 ## Problems/Difficulties
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
-| Error en el login i register | Implementació User Stories 1.1 | Theo, Pau | Problemes a l'hora d'implementar el login en Django |
-| Error en la modificació | Implementació User Stories 2.5 | Zihan, Pau | Problemes a d'implementar el edit|
+| Error en l'ús de ajax | Implementació automatitzacions | Theo, Pau | Problemes a l'hora d'implementar les automatitzacions |
+| Error en la vinculació de reserves i dades financeres | Implementació automatitzacions | Zihan, Pau | Dificultats a l'hora d'implementar les automatitzacions |
 
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Creació del login i register | Zihan, Theo, Ibra, Pau | 01-06-2023|
+| T | Implementació de les automatitzacions especificades en el model Kanban | Zihan, Theo, Ibra, Pau | 01-06-2023|
 
 T: Task
 D: Decision
@@ -91,15 +91,13 @@ I: Information
 ## Problems/Difficulties
 | Problem  | Task  | Owner | Description |
 |---|---|---|---|
-| Sprint review | Meeting per el sprint review | Zihan, Theo, Ibra, Pau | Elaboració document Sprint Review |
-| Sprint retrospective | Meeting per el sprint retrospective | Theo, Pau | Elaboració document Sprint Retrospective |
+| Aspectes gràfics | Afegir codi CSS per millorar la imatge de la web | Zihan, Theo, Ibra, Pau | Dificultats en l'ús del llenguatge CSS |
 
 
 ## Actions
 | Type  | Description  | Owner | Deadline |
 |---|---|---|---|
-| T | Sprint Review: AutoAvaluació | Zihan, Theo, Ibra, Pau | 06-06-2023|
-| T | Sprint Retrospective | Zihan, Theo, Ibra, Pau | 06-06-2023|
+| T | Millorar l'aspecte gràfic de la web amb CSS | Zihan, Theo, Ibra, Pau | 06-06-2023|
 
 T: Task
 D: Decision
