@@ -1,0 +1,27 @@
+name: Extracción de Etiquetas de Issues
+
+on:
+  issues:
+    types: [opened, edited, labeled, unlabeled]  # Se activará en eventos relacionados con las issues
+
+jobs:
+  extract-labels:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: pip install requests  # Instala la biblioteca requests para realizar solicitudes HTTP
+
+    - name: Extract labels
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Token de acceso personal generado automáticamente
+      run: python extract_labels.py
+
