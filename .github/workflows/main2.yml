@@ -1,0 +1,58 @@
+name: Automatizar Issues por Etiquetas
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  procesar_comentario:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Obtener comentario
+        uses: actions/github-script@v1  # Fetches comment and issue data
+
+        with:
+          script: |
+            const comment = github.context.payload.comment;
+            const issue = github.context.payload.issue;
+
+            return {
+              issueNumber: issue.number,
+              commentBody: comment.body,
+            };
+
+      - name: Extraer etiquetas
+        run: |  # Extracts labels using grep and sed
+          echo "${{ steps.get_comment.outputs.commentBody }}" | grep -Eo "#\w+" | tr -s '\n' ','
+
+      - name: Analizar etiquetas (opcional)
+        run: python analizar_etiquetas.py ${{ steps.extract_labels.outputs.labels }}  # Calls Python script for analysis
+
+      - name: Generar informe (opcional)
+        run: python generar_informe.py ${{ steps.analyze_labels.outputs.results }}  # Creates report (if implemented)
+
+      - name: Enviar notificación (opcional)
+        if: ${{ steps.analyze_labels.outputs.actionRequired }}  # Only if notification needed
+
+        run: python enviar_notificacion.py ${{ steps.analyze_labels.outputs.results }}  # Sends notification (if implemented)
+
+      - name: Agregar/remover etiquetas (opcional)
+        if: ${{ steps.analyze_labels.outputs.actionRequired }}  # Only if label modification needed
+
+        uses: actions/github-script@v1
+
+        with:
+          script: |
+            const labelsToAdd = ${{ steps.analyze_labels.outputs.labelsToAdd }};
+            const labelsToRemove = ${{ steps.analyze_labels.outputs.labelsToRemove }};
+
+            github.issues.addLabels({
+              issue_number: ${{ steps.get_comment.outputs.issueNumber }},
+              labels: labelsToAdd,
+            });
+
+            github.issues.removeLabels({
+              issue_number: ${{ steps.get_comment.outputs.issueNumber }},
+              labels: labelsToRemove,
+            });
